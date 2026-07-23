@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="gmtk"
+run/main_scene="uid://dcrl7ywx8jwtf"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+MinigameManagerScene="*uid://dtge0soaf8pvv"
+Globais="*uid://goc3ulij73uj"
 
 [display]
 

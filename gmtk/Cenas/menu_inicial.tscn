@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://dcrl7ywx8jwtf"]
+
+[ext_resource type="Script" uid="uid://cs5xb63jk6stj" path="res://Cenas/menu_controller.gd" id="1_4ahfv"]
+[ext_resource type="PackedScene" uid="uid://b1a13bxuslybc" path="res://Cenas/inicio_jogo.tscn" id="2_sm8o4"]
+
+[node name="MenuInicial" type="Control" unique_id=1398046020]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4ahfv")
+cena_inicio = ExtResource("2_sm8o4")
+
+[node name="Fundo" type="ColorRect" parent="." unique_id=351157566]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1855859247]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.24869792
+anchor_top = 0.5007716
+anchor_right = 0.24869792
+anchor_bottom = 0.5007716
+offset_left = -59.5
+offset_top = -50.5
+offset_right = 59.5
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="IniciarButton" type="Button" parent="VBoxContainer" unique_id=487106020]
+layout_mode = 2
+text = "Iniciar"
+metadata/_edit_use_anchors_ = true
+
+[node name="ConfigButton" type="Button" parent="VBoxContainer" unique_id=605785719]
+layout_mode = 2
+text = "Configurações"
+metadata/_edit_use_anchors_ = true
+
+[node name="SairButton" type="Button" parent="VBoxContainer" unique_id=1633692149]
+layout_mode = 2
+text = "Sair"
+metadata/_edit_use_anchors_ = true
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1076895337]
+points = PackedVector2Array(512, 648, 704, 0)
+default_color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="VBoxContainer/IniciarButton" to="." method="_on_iniciar_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ConfigButton" to="." method="_on_config_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/SairButton" to="." method="_on_sair_button_pressed"]
