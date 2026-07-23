@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://ckch8rh6leoh2"]
+
+[ext_resource type="Script" uid="uid://q1evgn1hpqfn" path="res://Cenas/Minijogos/minigame_template.gd" id="1_6jtyk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_otrat"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="MinigameTemplate" type="Control" unique_id=952263839 node_paths=PackedStringArray("label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6jtyk")
+label = NodePath("VBoxContainer/Label")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=3911797]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Instrucao" type="Label" parent="VBoxContainer" unique_id=1525958409]
+layout_mode = 2
+text = "Chegue em 5"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=808422413]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_otrat")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1029802817]
+layout_mode = 2
+text = "Aumentar"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

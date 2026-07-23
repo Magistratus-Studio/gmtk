@@ -1,6 +1,6 @@
 extends Control
 
-signal finalizar(situacao: int)
+#signal finalizar(situacao: int)
 
 @export_category("Filhos")
 @export var timer_principal: Timer
@@ -16,16 +16,37 @@ signal finalizar(situacao: int)
 @export_category("Variáveis")
 @export var TIMER_TOTAL: float = 10.0
 
+var temporizador_minigame: float = 2.0
+
 func _ready() -> void:
 	self.visible = false
+	barra_timer_principal.max_value = TIMER_TOTAL
+
+func _process(_delta: float) -> void:
+	label_timer_principal.text = String.num(timer_principal.time_left, 2)
+	label_timer_minigame.text = String.num(timer_minigame.time_left, 2)
+
 
 func iniciar() -> void:
 	self.visible = true
 	timer_principal.wait_time = TIMER_TOTAL
 	timer_principal.start()
 
-func _process(_delta: float) -> void:
-	label_timer_principal.text = String.num(timer_principal.time_left, 2)
+func iniciar_minigame() -> void:
+	timer_minigame.wait_time = temporizador_minigame
+	timer_minigame.start()
+
+func pausar_timer(status: bool) -> void:
+	timer_principal.paused = status
+
+func parar_timer_minigame() -> void:
+	timer_minigame.stop()
 
 func _on_timer_principal_timeout() -> void:
-	finalizar.emit(Globais.SUCESSO)
+	#finalizar.emit(Globais.SUCESSO)
+	parar_timer_minigame()
+	get_tree().change_scene_to_packed(tela_conclusao)
+
+
+func _on_timer_minigame_timeout() -> void:
+	get_tree().change_scene_to_packed(Globais.CENA_SELETOR)
