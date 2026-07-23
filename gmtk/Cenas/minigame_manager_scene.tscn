@@ -1,9 +1,76 @@
 [gd_scene format=3 uid="uid://dtge0soaf8pvv"]
 
-[node name="MinigameManagerScene" type="Control" unique_id=1923513264]
+[ext_resource type="Script" uid="uid://cq6oap4i838lv" path="res://Cenas/minigame_manager.gd" id="1_sw5qv"]
+[ext_resource type="PackedScene" uid="uid://b1wqa8wy5xguc" path="res://Cenas/tela_conclusao.tscn" id="2_26w0q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lauj7"]
+font_size = 14
+font_color = Color(0, 0, 0, 1)
+
+[node name="MinigameManagerScene" type="Control" unique_id=1923513264 node_paths=PackedStringArray("timer_principal", "timer_minigame", "barra_timer_principal", "barra_timer_minigame", "label_timer_principal", "label_timer_minigame")]
+z_index = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_sw5qv")
+timer_principal = NodePath("TimerPrincipal")
+timer_minigame = NodePath("TimerMinigame")
+barra_timer_principal = NodePath("VBoxContainer/ProgressBarPrincipal")
+barra_timer_minigame = NodePath("VBoxContainer/ProgressBarMinigame")
+label_timer_principal = NodePath("VBoxContainer2/LabelTimerPrincipal")
+label_timer_minigame = NodePath("VBoxContainer2/LabelTimerMinigame")
+tela_conclusao = ExtResource("2_26w0q")
+
+[node name="TimerPrincipal" type="Timer" parent="." unique_id=1848098506]
+wait_time = 10.0
+one_shot = true
+
+[node name="TimerMinigame" type="Timer" parent="." unique_id=362766242]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2137940629]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="ProgressBarPrincipal" type="ProgressBar" parent="VBoxContainer" unique_id=27199852]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+step = 1.0
+show_percentage = false
+
+[node name="ProgressBarMinigame" type="ProgressBar" parent="VBoxContainer" unique_id=355027769]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+step = 1.0
+show_percentage = false
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=417430033]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -18.0
+offset_right = 18.0
+offset_bottom = 44.0
+grow_horizontal = 2
+
+[node name="LabelTimerPrincipal" type="Label" parent="VBoxContainer2" unique_id=235755349]
+layout_mode = 2
+text = "texto"
+label_settings = SubResource("LabelSettings_lauj7")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="LabelTimerMinigame" type="Label" parent="VBoxContainer2" unique_id=1447960999]
+layout_mode = 2
+text = "texto"
+label_settings = SubResource("LabelSettings_lauj7")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="timeout" from="TimerPrincipal" to="." method="_on_timer_principal_timeout"]

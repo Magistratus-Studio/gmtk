@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dcrl7ywx8jwtf"]
 
-[ext_resource type="Script" uid="uid://cs5xb63jk6stj" path="res://Cenas/menu_controller.gd" id="1_4ahfv"]
+[ext_resource type="Script" uid="uid://cs5xb63jk6stj" path="res://Scripts/menu_controller.gd" id="1_4ahfv"]
 [ext_resource type="PackedScene" uid="uid://b1a13bxuslybc" path="res://Cenas/inicio_jogo.tscn" id="2_sm8o4"]
 
 [node name="MenuInicial" type="Control" unique_id=1398046020]
@@ -55,6 +55,7 @@ metadata/_edit_use_anchors_ = true
 points = PackedVector2Array(512, 648, 704, 0)
 default_color = Color(0, 0, 0, 1)
 
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="pressed" from="VBoxContainer/IniciarButton" to="." method="_on_iniciar_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ConfigButton" to="." method="_on_config_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/SairButton" to="." method="_on_sair_button_pressed"]
