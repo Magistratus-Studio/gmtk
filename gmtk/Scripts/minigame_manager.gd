@@ -15,7 +15,7 @@ extends Control
 
 @export_category("Variáveis")
 @export var TIMER_TOTAL: float = 20.0
-@export var temporizador_minigame: float = 2.0
+@export var temporizador_minigame: float = 4.0
 
 var minigame_atual: MinigameBase
 
@@ -75,9 +75,9 @@ func carregar_cena(nova_cena: PackedScene) -> void:
 func _on_minigame_concluido(sucesso: bool) -> void:
 	parar_timer_minigame()
 	if sucesso:
-		print("Próximo nível!") # passa para o proximo minigame 
+		print("Venceu Minigame!") # passa para o proximo minigame 
 	else:
-		print("Fim de jogo!") # aplicar debuf/ diminui o tempo maximo por minigame
+		print("Perdeu Minigame!") # aplicar debuf/ diminui o tempo maximo por minigame
 
 func _on_minigame_selecionado(minigame: PackedScene) -> void:
 	carregar_cena(minigame)

@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://b1a13bxuslybc"]
 
-[ext_resource type="Script" uid="uid://bfbam7k6blmos" path="res://Cenas/seletor_caminho.gd" id="1_xfh7h"]
-[ext_resource type="PackedScene" uid="uid://d1qeky4720sqw" path="res://Cenas/Minijogos/Sisifo.tscn" id="3_nc73i"]
+[ext_resource type="Script" uid="uid://bfbam7k6blmos" path="res://Scripts/seletor_caminho.gd" id="1_xfh7h"]
+[ext_resource type="PackedScene" uid="uid://5hx0nq0gfwen" path="res://Cenas/Minijogos/Ciclope/ciclope.tscn" id="3_hej73"]
+[ext_resource type="PackedScene" uid="uid://d1qeky4720sqw" path="res://Cenas/Minijogos/Sisifo/Sisifo.tscn" id="3_nc73i"]
 
 [node name="SeletorCaminho" type="Control" unique_id=188329596 groups=["seletor"]]
 layout_mode = 3
@@ -12,6 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xfh7h")
 sisifus = ExtResource("3_nc73i")
+ciclope = ExtResource("3_hej73")
 
 [node name="Fundo" type="ColorRect" parent="." unique_id=155421700]
 layout_mode = 1
@@ -37,7 +39,7 @@ grow_vertical = 2
 
 [node name="Button" type="Button" parent="HBoxContainer" unique_id=237881189]
 layout_mode = 2
-text = "Teste"
+text = "Ciclops"
 
 [node name="Button2" type="Button" parent="HBoxContainer" unique_id=1660411459]
 layout_mode = 2
@@ -48,4 +50,5 @@ layout_mode = 2
 text = "wip"
 
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_button_2_pressed"]

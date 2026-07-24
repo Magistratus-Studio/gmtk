@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d1qeky4720sqw"]
 
-[ext_resource type="Script" uid="uid://c1ddb51hvap8j" path="res://Cenas/Minijogos/sisifo.gd" id="1_w1vjk"]
+[ext_resource type="Script" uid="uid://c1ddb51hvap8j" path="res://Cenas/Minijogos/Sisifo/sisifo.gd" id="1_w1vjk"]
 [ext_resource type="Texture2D" uid="uid://bc1ayuixxupfe" path="res://icon.svg" id="2_i5430"]
 
 [sub_resource type="Curve2D" id="Curve2D_873gn"]

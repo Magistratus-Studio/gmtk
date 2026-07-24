@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b1wqa8wy5xguc"]
 
-[ext_resource type="Script" uid="uid://ov8l3ildxnh0" path="res://Cenas/tela_conclusao.gd" id="1_4u5a8"]
+[ext_resource type="Script" uid="uid://ov8l3ildxnh0" path="res://Scripts/tela_conclusao.gd" id="1_4u5a8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_otrat"]
 font_color = Color(0, 0, 0, 1)

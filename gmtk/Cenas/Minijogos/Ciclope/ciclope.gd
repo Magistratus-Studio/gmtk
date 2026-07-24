@@ -1,0 +1,46 @@
+extends MinigameBase
+
+@export var caminho_lanca: PathFollow2D
+@export var lanca: Sprite2D
+@export var distancia_estocada_certa: float = -50.0
+@export var distancia_estocada_errada: float = -300
+@export var tempo_ida: float = 0.05
+@export var area_clique: Button
+var vitoria: bool = false
+var velocidade: float = 0.3
+var tween: Tween
+
+func _ready() -> void:
+	caminho_lanca.progress_ratio = 0.15
+
+func iniciar() -> void:
+	super.iniciar()
+	caminho_lanca.progress_ratio = 0.15
+	area_clique.disabled = false
+
+func verificar_sucesso() -> bool:
+	if vitoria:
+		minigame_concluido.emit(true)
+		return true
+	minigame_concluido.emit(false)
+	return false
+
+func _process(delta: float) -> void:
+	caminho_lanca.progress_ratio += velocidade * delta
+	if caminho_lanca.progress_ratio < 0.1 or caminho_lanca.progress_ratio > 0.9:
+		velocidade = velocidade * -1.0
+
+func _on_button_pressed() -> void:
+	velocidade = 0
+	area_clique.disabled = true
+	if tween and tween.is_running():
+		tween.kill()
+	tween = create_tween()
+	
+	if caminho_lanca.progress_ratio > 0.45 and caminho_lanca.progress_ratio < 0.5:
+		vitoria = true
+		tween.tween_property(lanca, "position:y", distancia_estocada_certa, tempo_ida)\
+		.as_relative().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	else:
+		tween.tween_property(lanca, "position:y", distancia_estocada_errada, tempo_ida)\
+			.as_relative().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dtge0soaf8pvv"]
 
-[ext_resource type="Script" uid="uid://cq6oap4i838lv" path="res://Cenas/minigame_manager.gd" id="1_sw5qv"]
+[ext_resource type="Script" uid="uid://cq6oap4i838lv" path="res://Scripts/minigame_manager.gd" id="1_sw5qv"]
 [ext_resource type="PackedScene" uid="uid://b1wqa8wy5xguc" path="res://Cenas/tela_conclusao.tscn" id="2_26w0q"]
 [ext_resource type="PackedScene" uid="uid://dcrl7ywx8jwtf" path="res://Cenas/menu_inicial.tscn" id="3_sr11h"]
 [ext_resource type="PackedScene" uid="uid://b1a13bxuslybc" path="res://Cenas/seletor_caminho.tscn" id="4_f5rh3"]
