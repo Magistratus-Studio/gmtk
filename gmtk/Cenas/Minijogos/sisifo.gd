@@ -13,7 +13,7 @@ func verificar_sucesso() -> bool:
 	if caminho_pedra.progress_ratio >= 0.9:
 		minigame_concluido.emit(true)
 		return true
-	
+	minigame_concluido.emit(false)
 	return false
 
 func _process(delta: float) -> void:

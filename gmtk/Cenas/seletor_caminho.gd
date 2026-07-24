@@ -1,14 +1,7 @@
 extends Control
 
-@export var cena: PackedScene
+signal minigame_selecionado(minigame: PackedScene)
+@export var sisifus: PackedScene
 
-func _ready() -> void:
-	MinigameManagerScene.pausar_timer(true)
-
-
-func _on_tree_exited() -> void:
-	MinigameManagerScene.pausar_timer(false)
-
-
-func _on_button_pressed() -> void:
-	get_tree().change_scene_to_packed(cena)
+func _on_button_2_pressed() -> void:
+	minigame_selecionado.emit(sisifus)

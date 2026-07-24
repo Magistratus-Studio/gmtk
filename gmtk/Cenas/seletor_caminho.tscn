@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://b1a13bxuslybc"]
 
 [ext_resource type="Script" uid="uid://bfbam7k6blmos" path="res://Cenas/seletor_caminho.gd" id="1_xfh7h"]
-[ext_resource type="PackedScene" uid="uid://ckch8rh6leoh2" path="res://Cenas/Minijogos/minigame_template.tscn" id="2_dxxym"]
+[ext_resource type="PackedScene" uid="uid://d1qeky4720sqw" path="res://Cenas/Minijogos/Sisifo.tscn" id="3_nc73i"]
 
-[node name="SeletorCaminho" type="Control" unique_id=188329596]
+[node name="SeletorCaminho" type="Control" unique_id=188329596 groups=["seletor"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,7 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xfh7h")
-cena = ExtResource("2_dxxym")
+sisifus = ExtResource("3_nc73i")
 
 [node name="Fundo" type="ColorRect" parent="." unique_id=155421700]
 layout_mode = 1
@@ -41,11 +41,11 @@ text = "Teste"
 
 [node name="Button2" type="Button" parent="HBoxContainer" unique_id=1660411459]
 layout_mode = 2
-text = "wip"
+text = "Sisyphus"
 
 [node name="Button3" type="Button" parent="HBoxContainer" unique_id=1277553636]
 layout_mode = 2
 text = "wip"
 
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
-[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_button_2_pressed"]

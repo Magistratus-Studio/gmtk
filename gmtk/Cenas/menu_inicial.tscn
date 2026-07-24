@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dcrl7ywx8jwtf"]
 
 [ext_resource type="Script" uid="uid://cs5xb63jk6stj" path="res://Scripts/menu_controller.gd" id="1_4ahfv"]
-[ext_resource type="PackedScene" uid="uid://b1a13bxuslybc" path="res://Cenas/seletor_caminho.tscn" id="2_sm8o4"]
 
 [node name="MenuInicial" type="Control" unique_id=1398046020]
 layout_mode = 3
@@ -11,7 +10,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4ahfv")
-cena_inicio = ExtResource("2_sm8o4")
 
 [node name="Fundo" type="ColorRect" parent="." unique_id=351157566]
 layout_mode = 1
