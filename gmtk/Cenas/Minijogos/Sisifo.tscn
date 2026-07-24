@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://d1qeky4720sqw"]
+
+[ext_resource type="Script" uid="uid://c1ddb51hvap8j" path="res://Cenas/Minijogos/sisifo.gd" id="1_w1vjk"]
+[ext_resource type="Texture2D" uid="uid://bc1ayuixxupfe" path="res://icon.svg" id="2_i5430"]
+
+[sub_resource type="Curve2D" id="Curve2D_873gn"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 48, 320, 0, 0, 0, 0, 632, 88)
+}
+point_count = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_otrat"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="Sisifo" type="Control" unique_id=1995805051 node_paths=PackedStringArray("caminho_pedra")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w1vjk")
+caminho_pedra = NodePath("Path2D/PathFollow2D")
+metadata/_custom_type_script = "uid://brfp8a3wxvhfk"
+
+[node name="Fundo" type="ColorRect" parent="." unique_id=1114652887]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Line2D" type="Line2D" parent="." unique_id=437271396]
+points = PackedVector2Array(64, 360, 640, 128)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Path2D" type="Path2D" parent="." unique_id=239490144]
+curve = SubResource("Curve2D_873gn")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1185251696]
+position = Vector2(48, 320)
+rotation = -0.3781423
+loop = false
+
+[node name="Pedra" type="TextureButton" parent="Path2D/PathFollow2D" unique_id=576909792]
+custom_maximum_size = Vector2(50, 50)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_i5430")
+stretch_mode = 0
+
+[node name="Titulo" type="Label" parent="." unique_id=1083199590]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4125
+anchor_top = 0.2
+anchor_right = 0.51875
+anchor_bottom = 0.2
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Help Sisyphus"
+label_settings = SubResource("LabelSettings_otrat")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Path2D/PathFollow2D/Pedra" to="." method="_on_pedra_pressed"]
