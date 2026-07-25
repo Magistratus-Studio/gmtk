@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://d3sot5xgqkdv8"]
+
+[ext_resource type="Script" uid="uid://dhl0adgqlv55h" path="res://Cenas/Minijogos/Arco/arco_odisseu.gd" id="1_e0rc7"]
+[ext_resource type="Texture2D" uid="uid://bc1ayuixxupfe" path="res://icon.svg" id="2_42602"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otrat"]
+size = Vector2(120.000015, 80.00012)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ama0n"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_otrat"]
+a = Vector2(600, 112)
+b = Vector2(600, 264)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_42602"]
+a = Vector2(216, 160)
+b = Vector2(552, 160)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_4mnnu"]
+a = Vector2(216, 208)
+b = Vector2(552, 208)
+
+[node name="ArcoOdisseu" type="Control" unique_id=1390438499 node_paths=PackedStringArray("odisseu", "flecha", "desafio")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e0rc7")
+odisseu = NodePath("Odisseu")
+flecha = NodePath("Flecha")
+desafio = NodePath("Desafio")
+metadata/_custom_type_script = "uid://brfp8a3wxvhfk"
+
+[node name="Fundo" type="ColorRect" parent="." unique_id=1421908001]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Odisseu" type="Sprite2D" parent="." unique_id=1069948681]
+position = Vector2(112, 184)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_42602")
+
+[node name="Flecha" type="Sprite2D" parent="." unique_id=1680771823]
+position = Vector2(112, 184)
+scale = Vector2(0.4, 0.1)
+texture = ExtResource("2_42602")
+offset = Vector2(80, 0)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Flecha" unique_id=1705163677]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="ColisorFlecha" type="Area2D" parent="Flecha" unique_id=1428749366]
+position = Vector2(79.99999, 0)
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flecha/ColisorFlecha" unique_id=762438496]
+scale = Vector2(0.99999934, 0.99999934)
+shape = SubResource("RectangleShape2D_otrat")
+
+[node name="Titulo" type="Label" parent="." unique_id=1171573180]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.425
+anchor_top = 0.22200002
+anchor_right = 0.59106255
+anchor_bottom = 0.28622222
+offset_top = 0.0799942
+offset_right = -0.2800293
+offset_bottom = -0.040000916
+text = "Shoot the Arrow"
+label_settings = SubResource("LabelSettings_ama0n")
+metadata/_edit_use_anchors_ = true
+
+[node name="Desafio" type="Node2D" parent="." unique_id=1778881472]
+
+[node name="Alvo" type="Line2D" parent="Desafio" unique_id=737125854]
+points = PackedVector2Array(600, 112, 600, 264)
+default_color = Color(0, 0, 0, 1)
+
+[node name="ColisorAlvo" type="Area2D" parent="Desafio/Alvo" unique_id=83316192 groups=["alvo"]]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Desafio/Alvo/ColisorAlvo" unique_id=1035562061]
+shape = SubResource("SegmentShape2D_otrat")
+
+[node name="Parede" type="Line2D" parent="Desafio" unique_id=451402294]
+points = PackedVector2Array(216, 160, 552, 160)
+default_color = Color(0, 0, 0, 1)
+
+[node name="ColisorParede" type="Area2D" parent="Desafio/Parede" unique_id=967631577]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Desafio/Parede/ColisorParede" unique_id=259400602]
+shape = SubResource("SegmentShape2D_42602")
+
+[node name="Parede2" type="Line2D" parent="Desafio" unique_id=1597012251]
+points = PackedVector2Array(216, 208, 552, 208)
+default_color = Color(0, 0, 0, 1)
+
+[node name="ColisorParede" type="Area2D" parent="Desafio/Parede2" unique_id=718740446]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Desafio/Parede2/ColisorParede" unique_id=802611415]
+shape = SubResource("SegmentShape2D_4mnnu")
+
+[connection signal="screen_exited" from="Flecha/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="area_entered" from="Flecha/ColisorFlecha" to="." method="_on_colisor_flecha_area_entered"]

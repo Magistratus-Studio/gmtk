@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d1qeky4720sqw" path="res://Cenas/Minijogos/Sisifo/Sisifo.tscn" id="3_nc73i"]
 [ext_resource type="PackedScene" uid="uid://d2yt5lwvfw3uh" path="res://Cenas/Minijogos/Medusa/Medusa.tscn" id="4_hej73"]
 [ext_resource type="PackedScene" uid="uid://bjculms3pwg2t" path="res://Cenas/Minijogos/Hidra/hidra.tscn" id="5_y1mm1"]
+[ext_resource type="PackedScene" uid="uid://d3sot5xgqkdv8" path="res://Cenas/Minijogos/Arco/arco_odisseu.tscn" id="6_ipbtg"]
 
 [node name="SeletorCaminho" type="Control" unique_id=188329596 groups=["seletor"]]
 layout_mode = 3
@@ -18,6 +19,7 @@ sisifus = ExtResource("3_nc73i")
 ciclope = ExtResource("3_hej73")
 medusa = ExtResource("4_hej73")
 hidra = ExtResource("5_y1mm1")
+odisseu = ExtResource("6_ipbtg")
 
 [node name="Fundo" type="ColorRect" parent="." unique_id=155421700]
 layout_mode = 1
@@ -57,8 +59,13 @@ text = "Medusa"
 layout_mode = 2
 text = "Hidra"
 
+[node name="Button5" type="Button" parent="HBoxContainer" unique_id=565256914]
+layout_mode = 2
+text = "Odysseus"
+
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="HBoxContainer/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="HBoxContainer/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button5" to="." method="_on_button_5_pressed"]
