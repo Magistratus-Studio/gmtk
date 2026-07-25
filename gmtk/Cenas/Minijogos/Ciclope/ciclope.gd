@@ -10,8 +10,8 @@ var vitoria: bool = false
 var velocidade: float = 0.3
 var tween: Tween
 
-func _ready() -> void:
-	caminho_lanca.progress_ratio = 0.15
+#func _ready() -> void:
+	#caminho_lanca.progress_ratio = 0.15
 
 func iniciar() -> void:
 	super.iniciar()

@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://bjculms3pwg2t"]
+
+[ext_resource type="Script" uid="uid://1mg1wahe1bbf" path="res://Cenas/Minijogos/Hidra/hidra.gd" id="1_kbmje"]
+[ext_resource type="Texture2D" uid="uid://bc1ayuixxupfe" path="res://icon.svg" id="2_ewagc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qf2fo"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="Hidra" type="Control" unique_id=1258599585 node_paths=PackedStringArray("cabeca_container")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kbmje")
+cabeca_container = NodePath("Corpo/CabecaContainer")
+metadata/_custom_type_script = "uid://brfp8a3wxvhfk"
+
+[node name="Fundo" type="ColorRect" parent="." unique_id=1440073605]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Corpo" type="TextureRect" parent="." unique_id=770278632]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.79444444
+anchor_right = 0.5
+anchor_bottom = 0.79444444
+offset_left = -96.0
+offset_top = -46.0
+offset_right = 96.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ewagc")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CabecaContainer" type="HBoxContainer" parent="Corpo" unique_id=1848950043]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="CabecaButton" type="TextureButton" parent="Corpo/CabecaContainer" unique_id=770054635]
+custom_maximum_size = Vector2(50, 200)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -120)
+offset_transform_visual_only = false
+texture_normal = ExtResource("2_ewagc")
+stretch_mode = 0
+
+[node name="CabecaButton2" type="TextureButton" parent="Corpo/CabecaContainer" unique_id=857762777]
+custom_maximum_size = Vector2(50, 200)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -120)
+offset_transform_visual_only = false
+texture_normal = ExtResource("2_ewagc")
+stretch_mode = 0
+
+[node name="CabecaButton3" type="TextureButton" parent="Corpo/CabecaContainer" unique_id=414273946]
+custom_maximum_size = Vector2(50, 200)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -120)
+offset_transform_visual_only = false
+texture_normal = ExtResource("2_ewagc")
+stretch_mode = 0
+
+[node name="Titulo" type="Label" parent="." unique_id=1888851492]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.425
+anchor_top = 0.22200002
+anchor_right = 0.59106255
+anchor_bottom = 0.28622222
+offset_top = 0.0799942
+offset_right = -0.2800293
+offset_bottom = -0.040000916
+text = "Kill the Hidra"
+label_settings = SubResource("LabelSettings_qf2fo")
+metadata/_edit_use_anchors_ = true
