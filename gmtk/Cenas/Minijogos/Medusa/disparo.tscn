@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://6410gl83k8s7"]
+
+[ext_resource type="Texture2D" uid="uid://bc1ayuixxupfe" path="res://icon.svg" id="1_jsq7x"]
+[ext_resource type="Script" uid="uid://bsh0fe6vnoikh" path="res://Cenas/Minijogos/Medusa/disparo.gd" id="2_vyudc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otrat"]
+size = Vector2(160.00003, 160.00003)
+
+[node name="Disparo" type="Sprite2D" unique_id=673553500 groups=["disparos"]]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_jsq7x")
+script = ExtResource("2_vyudc")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2121215915 groups=["disparos"]]
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2047043831 groups=["disparos"]]
+scale = Vector2(0.99999964, 0.99999964)
+shape = SubResource("RectangleShape2D_otrat")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

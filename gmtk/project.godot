@@ -27,6 +27,7 @@ window/stretch/scale_mode="integer"
 
 minigame="minigame atualmente carregado"
 seletor=""
+disparos=""
 
 [physics]
 

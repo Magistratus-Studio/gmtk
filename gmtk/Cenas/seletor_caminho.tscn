@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bfbam7k6blmos" path="res://Scripts/seletor_caminho.gd" id="1_xfh7h"]
 [ext_resource type="PackedScene" uid="uid://5hx0nq0gfwen" path="res://Cenas/Minijogos/Ciclope/ciclope.tscn" id="3_hej73"]
 [ext_resource type="PackedScene" uid="uid://d1qeky4720sqw" path="res://Cenas/Minijogos/Sisifo/Sisifo.tscn" id="3_nc73i"]
+[ext_resource type="PackedScene" uid="uid://d2yt5lwvfw3uh" path="res://Cenas/Minijogos/Medusa/Medusa.tscn" id="4_hej73"]
 
 [node name="SeletorCaminho" type="Control" unique_id=188329596 groups=["seletor"]]
 layout_mode = 3
@@ -14,6 +15,7 @@ grow_vertical = 2
 script = ExtResource("1_xfh7h")
 sisifus = ExtResource("3_nc73i")
 ciclope = ExtResource("3_hej73")
+medusa = ExtResource("4_hej73")
 
 [node name="Fundo" type="ColorRect" parent="." unique_id=155421700]
 layout_mode = 1
@@ -47,8 +49,9 @@ text = "Sisyphus"
 
 [node name="Button3" type="Button" parent="HBoxContainer" unique_id=1277553636]
 layout_mode = 2
-text = "wip"
+text = "Medusa"
 
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button3" to="." method="_on_button_3_pressed"]
