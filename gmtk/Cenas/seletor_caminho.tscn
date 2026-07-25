@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d2yt5lwvfw3uh" path="res://Cenas/Minijogos/Medusa/Medusa.tscn" id="4_hej73"]
 [ext_resource type="PackedScene" uid="uid://bjculms3pwg2t" path="res://Cenas/Minijogos/Hidra/hidra.tscn" id="5_y1mm1"]
 [ext_resource type="PackedScene" uid="uid://d3sot5xgqkdv8" path="res://Cenas/Minijogos/Arco/arco_odisseu.tscn" id="6_ipbtg"]
+[ext_resource type="PackedScene" uid="uid://bgwj7u2ooc3w3" path="res://Cenas/Minijogos/Aves/aves_estifalo.tscn" id="7_tck4q"]
 
 [node name="SeletorCaminho" type="Control" unique_id=188329596 groups=["seletor"]]
 layout_mode = 3
@@ -20,6 +21,7 @@ ciclope = ExtResource("3_hej73")
 medusa = ExtResource("4_hej73")
 hidra = ExtResource("5_y1mm1")
 odisseu = ExtResource("6_ipbtg")
+estifalo = ExtResource("7_tck4q")
 
 [node name="Fundo" type="ColorRect" parent="." unique_id=155421700]
 layout_mode = 1
@@ -63,9 +65,14 @@ text = "Hidra"
 layout_mode = 2
 text = "Odysseus"
 
+[node name="Button6" type="Button" parent="HBoxContainer" unique_id=1307272822]
+layout_mode = 2
+text = "Stymphalian Birds"
+
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="HBoxContainer/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="HBoxContainer/Button4" to="." method="_on_button_4_pressed"]
 [connection signal="pressed" from="HBoxContainer/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button6" to="." method="_on_button_6_pressed"]

@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://bgwj7u2ooc3w3"]
+
+[ext_resource type="Script" uid="uid://c26rpo23s7nk4" path="res://Cenas/Minijogos/Aves/aves_estifalo.gd" id="1_nind8"]
+[ext_resource type="Texture2D" uid="uid://bc1ayuixxupfe" path="res://icon.svg" id="2_t457u"]
+[ext_resource type="PackedScene" uid="uid://b1s8y1sijb28g" path="res://Cenas/Minijogos/Aves/ave.tscn" id="3_gq1w6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_t457u"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="AvesEstifalo" type="Control" unique_id=1117180481 node_paths=PackedStringArray("contador_aves", "container_aves")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_nind8")
+contador_aves = NodePath("ContadorAves")
+container_aves = NodePath("AvesContainer")
+metadata/_custom_type_script = "uid://brfp8a3wxvhfk"
+
+[node name="Fundo" type="ColorRect" parent="." unique_id=829709209]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TimerAves" type="Timer" parent="." unique_id=1977639142]
+autostart = true
+
+[node name="ContadorAves" type="HBoxContainer" parent="." unique_id=1768606839]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="IconeAve" type="TextureRect" parent="ContadorAves" unique_id=1323893650]
+custom_maximum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("2_t457u")
+
+[node name="IconeAve2" type="TextureRect" parent="ContadorAves" unique_id=220364129]
+custom_maximum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("2_t457u")
+
+[node name="IconeAve3" type="TextureRect" parent="ContadorAves" unique_id=1787604056]
+custom_maximum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("2_t457u")
+
+[node name="IconeAve4" type="TextureRect" parent="ContadorAves" unique_id=1113617508]
+custom_maximum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("2_t457u")
+
+[node name="IconeAve5" type="TextureRect" parent="ContadorAves" unique_id=1506986974]
+custom_maximum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("2_t457u")
+
+[node name="IconeAve6" type="TextureRect" parent="ContadorAves" unique_id=867200127]
+custom_maximum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("2_t457u")
+
+[node name="IconeAve7" type="TextureRect" parent="ContadorAves" unique_id=1888748772]
+custom_maximum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("2_t457u")
+
+[node name="AvesContainer" type="Node2D" parent="." unique_id=719805885]
+
+[node name="Ave" parent="AvesContainer" unique_id=1179419101 instance=ExtResource("3_gq1w6")]
+position = Vector2(184, 200)
+
+[node name="Ave2" parent="AvesContainer" unique_id=1309275085 instance=ExtResource("3_gq1w6")]
+position = Vector2(184, 200)
+
+[node name="Ave3" parent="AvesContainer" unique_id=529720880 instance=ExtResource("3_gq1w6")]
+position = Vector2(184, 200)
+
+[node name="Ave4" parent="AvesContainer" unique_id=1241573381 instance=ExtResource("3_gq1w6")]
+position = Vector2(184, 200)
+
+[node name="Ave5" parent="AvesContainer" unique_id=536327081 instance=ExtResource("3_gq1w6")]
+position = Vector2(184, 200)
+
+[node name="Ave6" parent="AvesContainer" unique_id=1946791120 instance=ExtResource("3_gq1w6")]
+position = Vector2(184, 200)
+
+[node name="Ave7" parent="AvesContainer" unique_id=717440160 instance=ExtResource("3_gq1w6")]
+position = Vector2(184, 200)
+
+[node name="Titulo" type="Label" parent="." unique_id=1198649275]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.22200002
+anchor_right = 0.66137505
+anchor_bottom = 0.28622222
+offset_top = 0.0799942
+offset_right = 199.0
+offset_bottom = 23.079994
+text = "Kill the Stymphalian Birds"
+label_settings = SubResource("LabelSettings_t457u")
+metadata/_edit_use_anchors_ = true

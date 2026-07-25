@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b1s8y1sijb28g"]
+
+[ext_resource type="Script" uid="uid://bty2tj5v1pqfk" path="res://Cenas/Minijogos/Aves/ave.gd" id="1_jaum2"]
+[ext_resource type="Texture2D" uid="uid://bc1ayuixxupfe" path="res://icon.svg" id="2_50mj0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otrat"]
+size = Vector2(160.00003, 160.00003)
+
+[node name="Ave" type="Sprite2D" unique_id=1309275085]
+scale = Vector2(0.4, 0.2)
+texture = ExtResource("2_50mj0")
+script = ExtResource("1_jaum2")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=576022189]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1487349383]
+position = Vector2(-1.4305106e-06, -2.9802318e-06)
+scale = Vector2(0.99999964, 0.99999964)
+shape = SubResource("RectangleShape2D_otrat")
+
+[node name="TimerMovimento" type="Timer" parent="." unique_id=2123944204]
+autostart = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="timeout" from="TimerMovimento" to="." method="_on_timer_movimento_timeout"]
