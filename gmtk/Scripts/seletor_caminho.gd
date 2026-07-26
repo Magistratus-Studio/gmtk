@@ -8,6 +8,7 @@ signal minigame_selecionado(minigame: PackedScene)
 @export var odisseu: PackedScene
 @export var estifalo: PackedScene
 @export var simplegades: PackedScene
+@export var orfeu: PackedScene
 
 func _on_button_2_pressed() -> void:
 	minigame_selecionado.emit(sisifus)
@@ -29,3 +30,6 @@ func _on_button_6_pressed() -> void:
 
 func _on_button_7_pressed() -> void:
 	minigame_selecionado.emit(simplegades)
+
+func _on_button_8_pressed() -> void:
+	minigame_selecionado.emit(orfeu)

@@ -1,0 +1,181 @@
+[gd_scene format=3 uid="uid://bd00gh7xx8fsd"]
+
+[ext_resource type="Script" uid="uid://bmrplr7nyn7ev" path="res://Cenas/Minijogos/Submundo/submundo.gd" id="1_ecwns"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5t187"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="Submundo" type="Control" unique_id=530038715 node_paths=PackedStringArray("notas", "teclado", "porta")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ecwns")
+notas = NodePath("Notas")
+teclado = NodePath("Teclado")
+porta = NodePath("Panel/Status")
+metadata/_custom_type_script = "uid://brfp8a3wxvhfk"
+
+[node name="Fundo" type="ColorRect" parent="." unique_id=141790886]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Titulo" type="Label" parent="." unique_id=1616126721]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0004999995
+anchor_top = 0.2
+anchor_right = 1.0
+anchor_bottom = 0.264
+offset_left = 0.3199997
+offset_bottom = -0.040000916
+text = "Enter Hades Domain"
+label_settings = SubResource("LabelSettings_5t187")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Notas" type="Label" parent="." unique_id=1892936804]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.375
+anchor_top = 0.5997778
+anchor_right = 0.6420001
+anchor_bottom = 0.66377777
+offset_top = 0.0799942
+offset_right = 0.1199646
+offset_bottom = 0.039993286
+label_settings = SubResource("LabelSettings_5t187")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="." unique_id=1442313073]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.46875
+anchor_top = 0.36666667
+anchor_right = 0.54375
+anchor_bottom = 0.5222222
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Notas3" type="Label" parent="Panel" unique_id=1824217448]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.51704544
+anchor_top = 0.36979166
+anchor_right = 0.51704544
+anchor_bottom = 0.36979166
+offset_left = -21.5
+offset_top = -11.5
+offset_right = 21.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "porta"
+label_settings = SubResource("LabelSettings_5t187")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Status" type="Label" parent="Panel" unique_id=781060566]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.36363637
+anchor_top = 0.5729167
+anchor_right = 0.70454544
+anchor_bottom = 0.5729167
+offset_left = -16.0
+offset_top = -11.5
+offset_right = 16.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Fechada"
+label_settings = SubResource("LabelSettings_5t187")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Teclado" type="GridContainer" parent="." unique_id=516867029]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.296875
+anchor_top = 0.74444443
+anchor_right = 0.709375
+anchor_bottom = 0.88055557
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/v_separation = 9
+columns = 7
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" type="Control" parent="Teclado" unique_id=201179645]
+layout_mode = 2
+
+[node name="B" type="Button" parent="Teclado" unique_id=1809167705]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "B"
+
+[node name="Control2" type="Control" parent="Teclado" unique_id=2088045655]
+layout_mode = 2
+
+[node name="D" type="Button" parent="Teclado" unique_id=1943981936]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "D"
+
+[node name="Control3" type="Control" parent="Teclado" unique_id=1587874264]
+layout_mode = 2
+
+[node name="F" type="Button" parent="Teclado" unique_id=2079652576]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "F"
+
+[node name="Control4" type="Control" parent="Teclado" unique_id=2132196522]
+layout_mode = 2
+
+[node name="A" type="Button" parent="Teclado" unique_id=533475442]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "A"
+
+[node name="Control5" type="Control" parent="Teclado" unique_id=535634744]
+layout_mode = 2
+
+[node name="C" type="Button" parent="Teclado" unique_id=947156590]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "C"
+metadata/_edit_use_anchors_ = true
+
+[node name="Control6" type="Control" parent="Teclado" unique_id=676775582]
+layout_mode = 2
+
+[node name="E" type="Button" parent="Teclado" unique_id=666324286]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "E"
+
+[node name="Control7" type="Control" parent="Teclado" unique_id=2042659884]
+layout_mode = 2
+
+[node name="G" type="Button" parent="Teclado" unique_id=1928942225]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "G"
