@@ -4,12 +4,22 @@
 [ext_resource type="PackedScene" uid="uid://b1wqa8wy5xguc" path="res://Cenas/tela_conclusao.tscn" id="2_26w0q"]
 [ext_resource type="PackedScene" uid="uid://dcrl7ywx8jwtf" path="res://Cenas/menu_inicial.tscn" id="3_sr11h"]
 [ext_resource type="PackedScene" uid="uid://b1a13bxuslybc" path="res://Cenas/seletor_caminho.tscn" id="4_f5rh3"]
+[ext_resource type="PackedScene" uid="uid://wq113svfs4po" path="res://Cenas/Minijogos/Teseu/teseu.tscn" id="5_vl8rj"]
+[ext_resource type="PackedScene" uid="uid://bd00gh7xx8fsd" path="res://Cenas/Minijogos/Submundo/submundo.tscn" id="6_g8ekr"]
+[ext_resource type="PackedScene" uid="uid://cmci35ph4i50f" path="res://Cenas/Minijogos/Simplegades/simplegades.tscn" id="7_bdi2s"]
+[ext_resource type="PackedScene" uid="uid://bgwj7u2ooc3w3" path="res://Cenas/Minijogos/Aves/aves_estifalo.tscn" id="8_rvrk6"]
+[ext_resource type="PackedScene" uid="uid://d3sot5xgqkdv8" path="res://Cenas/Minijogos/Arco/arco_odisseu.tscn" id="9_27606"]
+[ext_resource type="PackedScene" uid="uid://bjculms3pwg2t" path="res://Cenas/Minijogos/Hidra/hidra.tscn" id="10_5u8lg"]
+[ext_resource type="PackedScene" uid="uid://d2yt5lwvfw3uh" path="res://Cenas/Minijogos/Medusa/Medusa.tscn" id="11_eq1h1"]
+[ext_resource type="PackedScene" uid="uid://5hx0nq0gfwen" path="res://Cenas/Minijogos/Ciclope/ciclope.tscn" id="12_arl2q"]
+[ext_resource type="PackedScene" uid="uid://d1qeky4720sqw" path="res://Cenas/Minijogos/Sisifo/Sisifo.tscn" id="13_uud8v"]
+[ext_resource type="Texture2D" uid="uid://bc1ayuixxupfe" path="res://icon.svg" id="14_g8ekr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lauj7"]
 font_size = 14
 font_color = Color(0, 0, 0, 1)
 
-[node name="MinigameManagerScene" type="Control" unique_id=1923513264 node_paths=PackedStringArray("timer_principal", "timer_minigame", "label_timer_principal", "label_timer_minigame", "hud", "scene_controller")]
+[node name="MinigameManagerScene" type="Control" unique_id=1923513264 node_paths=PackedStringArray("timer_minigame", "vidas_container", "label_timer_minigame", "hud", "scene_controller") groups=["orquestrador"]]
 z_index = 1
 layout_mode = 3
 anchors_preset = 15
@@ -19,18 +29,15 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_sw5qv")
-timer_principal = NodePath("TimerPrincipal")
 timer_minigame = NodePath("TimerMinigame")
-label_timer_principal = NodePath("HudTimers/VBoxContainer2/LabelTimerPrincipal")
+vidas_container = NodePath("HudTimers/VBoxContainer2/VidaContainer")
 label_timer_minigame = NodePath("HudTimers/VBoxContainer2/LabelTimerMinigame")
 hud = NodePath("HudTimers")
 scene_controller = NodePath("SceneController")
 tela_conclusao = ExtResource("2_26w0q")
 tela_inicial = ExtResource("3_sr11h")
 tela_seletor = ExtResource("4_f5rh3")
-
-[node name="TimerPrincipal" type="Timer" parent="." unique_id=1848098506]
-one_shot = true
+minigames_disponiveis = Array[PackedScene]([ExtResource("5_vl8rj"), ExtResource("6_g8ekr"), ExtResource("7_bdi2s"), ExtResource("8_rvrk6"), ExtResource("9_27606"), ExtResource("10_5u8lg"), ExtResource("11_eq1h1"), ExtResource("12_arl2q"), ExtResource("13_uud8v")])
 
 [node name="TimerMinigame" type="Timer" parent="." unique_id=362766242]
 one_shot = true
@@ -61,12 +68,23 @@ offset_right = 18.0
 offset_bottom = 44.0
 grow_horizontal = 2
 
-[node name="LabelTimerPrincipal" type="Label" parent="HudTimers/VBoxContainer2" unique_id=235755349]
+[node name="VidaContainer" type="HBoxContainer" parent="HudTimers/VBoxContainer2" unique_id=373210906]
 layout_mode = 2
-text = "texto"
-label_settings = SubResource("LabelSettings_lauj7")
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
+
+[node name="Vida" type="TextureRect" parent="HudTimers/VBoxContainer2/VidaContainer" unique_id=1395556812]
+custom_maximum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("14_g8ekr")
+
+[node name="Vida2" type="TextureRect" parent="HudTimers/VBoxContainer2/VidaContainer" unique_id=1027931046]
+custom_maximum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("14_g8ekr")
+
+[node name="Vida3" type="TextureRect" parent="HudTimers/VBoxContainer2/VidaContainer" unique_id=165951761]
+custom_maximum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("14_g8ekr")
 
 [node name="LabelTimerMinigame" type="Label" parent="HudTimers/VBoxContainer2" unique_id=1447960999]
 layout_mode = 2
@@ -76,5 +94,4 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[connection signal="timeout" from="TimerPrincipal" to="." method="_on_timer_principal_timeout"]
 [connection signal="timeout" from="TimerMinigame" to="." method="_on_timer_minigame_timeout"]

@@ -1,9 +1,8 @@
 extends Control
 
 @export_category("Filhos")
-@export var timer_principal: Timer
 @export var timer_minigame: Timer
-@export var label_timer_principal: Label
+@export var vidas_container: HBoxContainer
 @export var label_timer_minigame: Label
 @export var hud: Control
 @export var scene_controller: Control
@@ -14,39 +13,36 @@ extends Control
 @export var tela_seletor: PackedScene
 
 @export_category("Variáveis")
-@export var TIMER_TOTAL: float = 20.0
 @export var temporizador_minigame: float = 4.0
+@export var vidas: int = 3
 
+@export_category("Minigames")
+@export var minigames_disponiveis: Array[PackedScene]
+var pool_minigames: Array[PackedScene]
 var minigame_atual: MinigameBase
 
 func _ready() -> void:
+	pool_minigames = minigames_disponiveis.duplicate(true)
 	hud.hide()
 	carregar_cena(tela_inicial)
 
 func _process(_delta: float) -> void:
-	label_timer_principal.text = String.num(timer_principal.time_left, 2)
 	label_timer_minigame.text = String.num(timer_minigame.time_left, 2)
 
 func checar_vitoria() -> void:
 	if minigame_atual.verificar_sucesso():
 		print("Jogador venceu o minigame atual!")
-	carregar_cena(tela_seletor)
 
 func _iniciar_jogo() -> void:
 	hud.show()
-	timer_principal.start(TIMER_TOTAL)
+	minigames_disponiveis = pool_minigames.duplicate(true)
+	vidas = 3
+	for vida: TextureRect in vidas_container.get_children():
+		vida.modulate = Color.WHITE
 	carregar_cena(tela_seletor)
-
-func pausar_timer(status: bool) -> void:
-	timer_principal.paused = status
 
 func parar_timer_minigame() -> void:
 	timer_minigame.stop()
-
-func _on_timer_principal_timeout() -> void:
-	parar_timer_minigame()
-	hud.hide()
-	carregar_cena(tela_conclusao)
 
 func _on_timer_minigame_timeout() -> void:
 	checar_vitoria()
@@ -68,6 +64,7 @@ func carregar_cena(nova_cena: PackedScene) -> void:
 	elif instancia.has_signal("minigame_selecionado"): # conectar sinais seletor
 		instancia.minigame_selecionado.connect(_on_minigame_selecionado)
 	elif instancia.has_signal("voltar_menu"): # conectar sinais tela final
+		hud.hide()
 		instancia.voltar_menu.connect(_on_voltar_menu)
 	
 	scene_controller.add_child(instancia)
@@ -75,12 +72,39 @@ func carregar_cena(nova_cena: PackedScene) -> void:
 func _on_minigame_concluido(sucesso: bool) -> void:
 	parar_timer_minigame()
 	if sucesso:
-		print("Venceu Minigame!") # passa para o proximo minigame 
+		if minigames_disponiveis.size() == 0:
+			carregar_cena(tela_conclusao) # com vitória
+		else:
+			carregar_cena(tela_seletor)
 	else:
+		vidas -= 1
+		# diminuir uma vida do hud
+		var vida: TextureRect = vidas_container.get_child(vidas)
+		vida.modulate = Color.DIM_GRAY
+		if vidas == 0:
+			carregar_cena(tela_conclusao) # com derrota
+		else:
+			carregar_cena(tela_seletor)
 		print("Perdeu Minigame!") # aplicar debuf/ diminui o tempo maximo por minigame
 
 func _on_minigame_selecionado(minigame: PackedScene) -> void:
+	minigames_disponiveis.erase(minigame)
 	carregar_cena(minigame)
 
 func _on_voltar_menu() -> void:
 	carregar_cena(tela_inicial)
+
+func sortear_minigames() -> Array[PackedScene]:
+	# Trava de segurança se a lista esvaziar
+	if minigames_disponiveis.is_empty():
+		return []
+		
+	minigames_disponiveis.shuffle()
+	
+	var sorteados: Array[PackedScene] = []
+	sorteados.append(minigames_disponiveis[0])
+	
+	if minigames_disponiveis.size() > 1:
+		sorteados.append(minigames_disponiveis[1])
+		
+	return sorteados

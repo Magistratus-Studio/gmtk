@@ -1,14 +1,9 @@
 [gd_scene format=3 uid="uid://b1a13bxuslybc"]
 
 [ext_resource type="Script" uid="uid://bfbam7k6blmos" path="res://Scripts/seletor_caminho.gd" id="1_xfh7h"]
-[ext_resource type="PackedScene" uid="uid://5hx0nq0gfwen" path="res://Cenas/Minijogos/Ciclope/ciclope.tscn" id="3_hej73"]
-[ext_resource type="PackedScene" uid="uid://d1qeky4720sqw" path="res://Cenas/Minijogos/Sisifo/Sisifo.tscn" id="3_nc73i"]
-[ext_resource type="PackedScene" uid="uid://d2yt5lwvfw3uh" path="res://Cenas/Minijogos/Medusa/Medusa.tscn" id="4_hej73"]
-[ext_resource type="PackedScene" uid="uid://bjculms3pwg2t" path="res://Cenas/Minijogos/Hidra/hidra.tscn" id="5_y1mm1"]
-[ext_resource type="PackedScene" uid="uid://d3sot5xgqkdv8" path="res://Cenas/Minijogos/Arco/arco_odisseu.tscn" id="6_ipbtg"]
-[ext_resource type="PackedScene" uid="uid://bgwj7u2ooc3w3" path="res://Cenas/Minijogos/Aves/aves_estifalo.tscn" id="7_tck4q"]
-[ext_resource type="PackedScene" uid="uid://cmci35ph4i50f" path="res://Cenas/Minijogos/Simplegades/simplegades.tscn" id="8_r37qa"]
-[ext_resource type="PackedScene" uid="uid://bd00gh7xx8fsd" path="res://Cenas/Minijogos/Submundo/submundo.tscn" id="9_iv6lu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xfh7h"]
+font_color = Color(0, 0, 0, 1)
 
 [node name="SeletorCaminho" type="Control" unique_id=188329596 groups=["seletor"]]
 layout_mode = 3
@@ -18,14 +13,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xfh7h")
-sisifus = ExtResource("3_nc73i")
-ciclope = ExtResource("3_hej73")
-medusa = ExtResource("4_hej73")
-hidra = ExtResource("5_y1mm1")
-odisseu = ExtResource("6_ipbtg")
-estifalo = ExtResource("7_tck4q")
-simplegades = ExtResource("8_r37qa")
-orfeu = ExtResource("9_iv6lu")
 
 [node name="Fundo" type="ColorRect" parent="." unique_id=155421700]
 layout_mode = 1
@@ -35,21 +22,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="GridContainer" parent="." unique_id=1852231460]
-custom_maximum_size = Vector2(640, -1)
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1963682467]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -174.5
-offset_top = -50.5
-offset_right = 174.5
-offset_bottom = 50.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-columns = 3
 
 [node name="Button" type="Button" parent="HBoxContainer" unique_id=237881189]
 layout_mode = 2
@@ -59,36 +44,19 @@ text = "Ciclops"
 layout_mode = 2
 text = "Sisyphus"
 
-[node name="Button3" type="Button" parent="HBoxContainer" unique_id=1277553636]
-layout_mode = 2
-text = "Medusa"
+[node name="Titulo" type="Label" parent="." unique_id=285581555]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0004999995
+anchor_top = 0.2
+anchor_right = 1.0
+anchor_bottom = 0.264
+offset_left = 0.3199997
+offset_bottom = -0.040000916
+text = "Chose Your Destiny"
+label_settings = SubResource("LabelSettings_xfh7h")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="Button4" type="Button" parent="HBoxContainer" unique_id=688852871]
-layout_mode = 2
-text = "Hidra"
-
-[node name="Button5" type="Button" parent="HBoxContainer" unique_id=565256914]
-layout_mode = 2
-text = "Odysseus"
-
-[node name="Button6" type="Button" parent="HBoxContainer" unique_id=1307272822]
-layout_mode = 2
-text = "Stymphalian Birds"
-
-[node name="Button7" type="Button" parent="HBoxContainer" unique_id=1604295452]
-layout_mode = 2
-text = "Symplegades"
-
-[node name="Button8" type="Button" parent="HBoxContainer" unique_id=1833868422]
-layout_mode = 2
-text = "Orpheus"
-
-[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
-[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="HBoxContainer/Button3" to="." method="_on_button_3_pressed"]
-[connection signal="pressed" from="HBoxContainer/Button4" to="." method="_on_button_4_pressed"]
-[connection signal="pressed" from="HBoxContainer/Button5" to="." method="_on_button_5_pressed"]
-[connection signal="pressed" from="HBoxContainer/Button6" to="." method="_on_button_6_pressed"]
-[connection signal="pressed" from="HBoxContainer/Button7" to="." method="_on_button_7_pressed"]
-[connection signal="pressed" from="HBoxContainer/Button8" to="." method="_on_button_8_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed" flags=18]
+[connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_button_pressed" flags=18]
