@@ -4,6 +4,32 @@
 [ext_resource type="Texture2D" uid="uid://cqxyf375cu7md" path="res://Sprites/Fundo tela de inicio.png" id="2_nc73i"]
 [ext_resource type="Theme" uid="uid://b5q3uqdve1ja6" path="res://Assets/tema_botoes.tres" id="3_hej73"]
 [ext_resource type="LabelSettings" uid="uid://dlnnkssqlns6o" path="res://Assets/fonte_principal.tres" id="4_hej73"]
+[ext_resource type="Script" uid="uid://by080li3jepy" path="res://Cenas/personagem.gd" id="5_ipbtg"]
+[ext_resource type="Texture2D" uid="uid://crvu6mgtuah6x" path="res://Sprites/Heroi fases.png" id="5_y1mm1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otrat"]
+atlas = ExtResource("5_y1mm1")
+region = Rect2(1, 13, 24, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1mm1"]
+atlas = ExtResource("5_y1mm1")
+region = Rect2(36, 13, 24, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipbtg"]
+atlas = ExtResource("5_y1mm1")
+region = Rect2(2, 51, 27, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tck4q"]
+atlas = ExtResource("5_y1mm1")
+region = Rect2(2, 51, 27, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r37qa"]
+atlas = ExtResource("5_y1mm1")
+region = Rect2(34, 51, 27, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iv6lu"]
+atlas = ExtResource("5_y1mm1")
+region = Rect2(119, 41, 33, 55)
 
 [node name="SeletorCaminho" type="Control" unique_id=188329596 groups=["seletor"]]
 layout_mode = 3
@@ -30,10 +56,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -5.0
+offset_top = -9.0
+offset_right = 208.0
+offset_bottom = 55.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 25
@@ -61,6 +87,50 @@ text = "Chose Your Destiny"
 label_settings = ExtResource("4_hej73")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="Personagem" type="Node2D" parent="." unique_id=1040385905]
+script = ExtResource("5_ipbtg")
+
+[node name="Sprite2D" type="Sprite2D" parent="Personagem" unique_id=1189848256]
+position = Vector2(157.5, 196.5)
+scale = Vector2(5, 5)
+texture = SubResource("AtlasTexture_otrat")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Personagem" unique_id=1960787361]
+visible = false
+position = Vector2(157.5, 196.5)
+scale = Vector2(5, 5)
+texture = SubResource("AtlasTexture_y1mm1")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Personagem" unique_id=359168919]
+visible = false
+position = Vector2(157.5, 196.5)
+scale = Vector2(5, 5)
+texture = SubResource("AtlasTexture_ipbtg")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Personagem" unique_id=961789951]
+visible = false
+position = Vector2(157.5, 196.5)
+scale = Vector2(5, 5)
+texture = SubResource("AtlasTexture_tck4q")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Personagem" unique_id=1275006547]
+visible = false
+position = Vector2(157.5, 196.5)
+scale = Vector2(5, 5)
+texture = SubResource("AtlasTexture_r37qa")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Personagem" unique_id=1942794290]
+visible = false
+position = Vector2(157.5, 196.5)
+scale = Vector2(5, 5)
+texture = SubResource("AtlasTexture_iv6lu")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Personagem" unique_id=661587654]
+visible = false
+position = Vector2(157.5, 196.5)
+scale = Vector2(5, 5)
+texture = SubResource("AtlasTexture_iv6lu")
 
 [connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed" flags=18]
 [connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_button_pressed" flags=18]

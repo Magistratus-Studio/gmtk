@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://dymp2kqnfqd78"]
+
+[ext_resource type="FontFile" uid="uid://ckh70sq6hvymg" path="res://Assets/CaesarDressing-Regular.ttf" id="1_wb4rp"]
+
+[resource]
+font = ExtResource("1_wb4rp")
+font_size = 32
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)

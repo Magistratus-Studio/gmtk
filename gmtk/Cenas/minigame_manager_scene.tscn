@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://b1a13bxuslybc" path="res://Cenas/seletor_caminho.tscn" id="4_f5rh3"]
 [ext_resource type="PackedScene" uid="uid://d3sot5xgqkdv8" path="res://Cenas/Minijogos/Arco/arco_odisseu.tscn" id="9_27606"]
 [ext_resource type="PackedScene" uid="uid://bjculms3pwg2t" path="res://Cenas/Minijogos/Hidra/hidra.tscn" id="10_5u8lg"]
+[ext_resource type="Texture2D" uid="uid://c5rq8plw1cbu2" path="res://Sprites/Carretel.png" id="10_mthxc"]
 [ext_resource type="PackedScene" uid="uid://d2yt5lwvfw3uh" path="res://Cenas/Minijogos/Medusa/Medusa.tscn" id="11_eq1h1"]
 [ext_resource type="PackedScene" uid="uid://5hx0nq0gfwen" path="res://Cenas/Minijogos/Ciclope/ciclope.tscn" id="12_arl2q"]
 [ext_resource type="PackedScene" uid="uid://d1qeky4720sqw" path="res://Cenas/Minijogos/Sisifo/Sisifo.tscn" id="13_uud8v"]
-[ext_resource type="Texture2D" uid="uid://cehcier1np2hq" path="res://Sprites/Vida-1.png.png" id="14_g8ekr"]
 [ext_resource type="LabelSettings" uid="uid://dlnnkssqlns6o" path="res://Assets/fonte_principal.tres" id="15_bdi2s"]
 
 [node name="MinigameManagerScene" type="Control" unique_id=1923513264 node_paths=PackedStringArray("timer_minigame", "vidas_container", "label_timer_minigame", "hud", "scene_controller") groups=["orquestrador"]]
@@ -68,17 +68,17 @@ layout_mode = 2
 [node name="Vida" type="TextureRect" parent="HudTimers/VBoxContainer2/VidaContainer" unique_id=1395556812]
 custom_maximum_size = Vector2(30, 30)
 layout_mode = 2
-texture = ExtResource("14_g8ekr")
+texture = ExtResource("10_mthxc")
 
-[node name="Vida2" type="TextureRect" parent="HudTimers/VBoxContainer2/VidaContainer" unique_id=1992865998]
+[node name="Vida2" type="TextureRect" parent="HudTimers/VBoxContainer2/VidaContainer" unique_id=548585797]
 custom_maximum_size = Vector2(30, 30)
 layout_mode = 2
-texture = ExtResource("14_g8ekr")
+texture = ExtResource("10_mthxc")
 
-[node name="Vida3" type="TextureRect" parent="HudTimers/VBoxContainer2/VidaContainer" unique_id=1895149445]
+[node name="Vida3" type="TextureRect" parent="HudTimers/VBoxContainer2/VidaContainer" unique_id=429711988]
 custom_maximum_size = Vector2(30, 30)
 layout_mode = 2
-texture = ExtResource("14_g8ekr")
+texture = ExtResource("10_mthxc")
 
 [node name="LabelTimerMinigame" type="Label" parent="HudTimers/VBoxContainer2" unique_id=1447960999]
 layout_mode = 2

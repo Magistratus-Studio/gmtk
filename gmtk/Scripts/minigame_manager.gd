@@ -62,6 +62,7 @@ func carregar_cena(nova_cena: PackedScene) -> void:
 		timer_minigame.start()
 	elif instancia.has_signal("iniciar_jogo"): # conectar sinais menu
 		instancia.iniciar_jogo.connect(_iniciar_jogo)
+		Globais.indice_sprite_personagem = 0
 	elif instancia.has_signal("minigame_selecionado"): # conectar sinais seletor
 		instancia.minigame_selecionado.connect(_on_minigame_selecionado)
 	elif instancia.has_signal("voltar_menu"): # conectar sinais tela final
@@ -73,6 +74,7 @@ func carregar_cena(nova_cena: PackedScene) -> void:
 func _on_minigame_concluido(sucesso: bool) -> void:
 	parar_timer_minigame()
 	if sucesso:
+		Globais.indice_sprite_personagem += 1
 		if minigames_disponiveis.size() == 0:
 			Globais.vitoria = true
 			carregar_cena(tela_conclusao) # com vitória

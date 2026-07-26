@@ -2,9 +2,12 @@
 
 [ext_resource type="Script" uid="uid://y1422xvabbvs" path="res://Cenas/Minijogos/Medusa/medusa.gd" id="1_vyocy"]
 [ext_resource type="PackedScene" uid="uid://6410gl83k8s7" path="res://Cenas/Minijogos/Medusa/disparo.tscn" id="2_mg0gg"]
-[ext_resource type="Texture2D" uid="uid://cqxyf375cu7md" path="res://Sprites/Fundo tela de inicio.png" id="3_rwmrl"]
 [ext_resource type="LabelSettings" uid="uid://dlnnkssqlns6o" path="res://Assets/fonte_principal.tres" id="5_067hr"]
 [ext_resource type="Texture2D" uid="uid://lt3yucfa1h3g" path="res://Sprites/Medusa.png" id="5_h0sqj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8nxp"]
+atlas = ExtResource("5_h0sqj")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_067hr"]
 atlas = ExtResource("5_h0sqj")
@@ -94,7 +97,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_rwmrl")
+texture = SubResource("AtlasTexture_x8nxp")
+stretch_mode = 1
 
 [node name="Escudo" type="AnimatedSprite2D" parent="." unique_id=472562629]
 position = Vector2(320, 180)

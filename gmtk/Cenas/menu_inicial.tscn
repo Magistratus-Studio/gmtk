@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cs5xb63jk6stj" path="res://Scripts/menu_controller.gd" id="1_4ahfv"]
 [ext_resource type="Texture2D" uid="uid://cqxyf375cu7md" path="res://Sprites/Fundo tela de inicio.png" id="2_sm8o4"]
+[ext_resource type="LabelSettings" uid="uid://dymp2kqnfqd78" path="res://Assets/fonte_Titulos.tres" id="3_21lpp"]
 [ext_resource type="Theme" uid="uid://b5q3uqdve1ja6" path="res://Assets/tema_botoes.tres" id="3_qdvqo"]
 
 [node name="MenuInicial" type="Control" unique_id=1398046020]
@@ -22,20 +23,34 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_sm8o4")
 
+[node name="Titulo" type="Label" parent="." unique_id=1583043089]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0004999995
+anchor_top = 0.13333334
+anchor_right = 1.0
+anchor_bottom = 0.24455556
+offset_left = 0.3199997
+offset_bottom = -0.040000916
+text = "Greek rush"
+label_settings = ExtResource("3_21lpp")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1855859247]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.62777776
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -59.5
-offset_top = -50.5
-offset_right = 59.5
-offset_bottom = 50.5
+anchor_bottom = 0.62777776
+offset_left = -71.0
+offset_top = -114.0
+offset_right = 71.0
+offset_bottom = 114.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 18
+theme_override_constants/separation = 4
 metadata/_edit_use_anchors_ = true
 
 [node name="IniciarButton" type="Button" parent="VBoxContainer" unique_id=487106020]

@@ -3,7 +3,33 @@
 [ext_resource type="Script" uid="uid://ov8l3ildxnh0" path="res://Scripts/tela_conclusao.gd" id="1_4u5a8"]
 [ext_resource type="Texture2D" uid="uid://cqxyf375cu7md" path="res://Sprites/Fundo tela de inicio.png" id="2_maa8k"]
 [ext_resource type="Theme" uid="uid://b5q3uqdve1ja6" path="res://Assets/tema_botoes.tres" id="3_3ip3n"]
-[ext_resource type="LabelSettings" uid="uid://dlnnkssqlns6o" path="res://Assets/fonte_principal.tres" id="4_3ip3n"]
+[ext_resource type="LabelSettings" uid="uid://dymp2kqnfqd78" path="res://Assets/fonte_Titulos.tres" id="4_3ip3n"]
+[ext_resource type="Script" uid="uid://by080li3jepy" path="res://Cenas/personagem.gd" id="5_1w5cg"]
+[ext_resource type="Texture2D" uid="uid://crvu6mgtuah6x" path="res://Sprites/Heroi fases.png" id="6_3jxyd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nj3cl"]
+atlas = ExtResource("6_3jxyd")
+region = Rect2(1, 13, 24, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tt3mi"]
+atlas = ExtResource("6_3jxyd")
+region = Rect2(36, 13, 24, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wh0v7"]
+atlas = ExtResource("6_3jxyd")
+region = Rect2(2, 51, 27, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63d3r"]
+atlas = ExtResource("6_3jxyd")
+region = Rect2(2, 51, 27, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86a58"]
+atlas = ExtResource("6_3jxyd")
+region = Rect2(34, 51, 27, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1a3uu"]
+atlas = ExtResource("6_3jxyd")
+region = Rect2(119, 41, 33, 55)
 
 [node name="TelaConclusao" type="Control" unique_id=1906703916]
 layout_mode = 3
@@ -52,5 +78,49 @@ offset_bottom = -0.040000916
 label_settings = ExtResource("4_3ip3n")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="Personagem" type="Node2D" parent="." unique_id=1637532908]
+script = ExtResource("5_1w5cg")
+
+[node name="Sprite2D" type="Sprite2D" parent="Personagem" unique_id=1566061127]
+position = Vector2(157.5, 196.5)
+scale = Vector2(5, 5)
+texture = SubResource("AtlasTexture_nj3cl")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Personagem" unique_id=1088318385]
+visible = false
+position = Vector2(157.5, 196.5)
+scale = Vector2(5, 5)
+texture = SubResource("AtlasTexture_tt3mi")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Personagem" unique_id=1335293884]
+visible = false
+position = Vector2(157.5, 196.5)
+scale = Vector2(5, 5)
+texture = SubResource("AtlasTexture_wh0v7")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Personagem" unique_id=2004532925]
+visible = false
+position = Vector2(157.5, 196.5)
+scale = Vector2(5, 5)
+texture = SubResource("AtlasTexture_63d3r")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Personagem" unique_id=787223757]
+visible = false
+position = Vector2(157.5, 196.5)
+scale = Vector2(5, 5)
+texture = SubResource("AtlasTexture_86a58")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Personagem" unique_id=1208008708]
+visible = false
+position = Vector2(157.5, 196.5)
+scale = Vector2(5, 5)
+texture = SubResource("AtlasTexture_1a3uu")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Personagem" unique_id=546283085]
+visible = false
+position = Vector2(157.5, 196.5)
+scale = Vector2(5, 5)
+texture = SubResource("AtlasTexture_1a3uu")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
