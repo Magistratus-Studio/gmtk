@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bc1ayuixxupfe" path="res://icon.svg" id="2_t457u"]
 [ext_resource type="PackedScene" uid="uid://b1s8y1sijb28g" path="res://Cenas/Minijogos/Aves/ave.tscn" id="3_gq1w6"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_t457u"]
+[sub_resource type="LabelSettings" id="LabelSettings_gq1w6"]
 font_color = Color(0, 0, 0, 1)
 
 [node name="AvesEstifalo" type="Control" unique_id=1117180481 node_paths=PackedStringArray("contador_aves", "container_aves")]
@@ -100,16 +100,16 @@ position = Vector2(184, 200)
 [node name="Ave7" parent="AvesContainer" unique_id=717440160 instance=ExtResource("3_gq1w6")]
 position = Vector2(184, 200)
 
-[node name="Titulo" type="Label" parent="." unique_id=1198649275]
+[node name="Titulo" type="Label" parent="." unique_id=477339142]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.35
-anchor_top = 0.22200002
-anchor_right = 0.66137505
-anchor_bottom = 0.28622222
-offset_top = 0.0799942
-offset_right = 199.0
-offset_bottom = 23.079994
+anchor_left = -0.0004999995
+anchor_top = 0.2
+anchor_right = 1.0
+anchor_bottom = 0.264
+offset_left = 0.3199997
+offset_bottom = -0.040000916
 text = "Kill the Stymphalian Birds"
-label_settings = SubResource("LabelSettings_t457u")
+label_settings = SubResource("LabelSettings_gq1w6")
+horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true

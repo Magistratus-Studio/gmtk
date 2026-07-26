@@ -7,9 +7,6 @@
 offsets = PackedFloat32Array(0, 0.40131578, 1)
 colors = PackedColorArray(0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_fyjgl"]
-font_color = Color(0, 0, 0, 1)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_otrat"]
 size = Vector2(128.00003, 128)
 
@@ -21,6 +18,9 @@ size = Vector2(128, 80)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_otrat"]
 b = Vector2(0, 64)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ytekd"]
+font_color = Color(0, 0, 0, 1)
 
 [node name="Simplegades" type="Control" unique_id=401489949 node_paths=PackedStringArray("rocha_cima", "rocha_baixo", "barco", "barra_forca")]
 layout_mode = 3
@@ -45,20 +45,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-
-[node name="Titulo" type="Label" parent="." unique_id=1341337896]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.35
-anchor_top = 0.1997778
-anchor_right = 0.61700004
-anchor_bottom = 0.2637778
-offset_top = 0.0799942
-offset_right = 0.1199646
-offset_bottom = 0.039993286
-text = "Pass the Symplegades"
-label_settings = SubResource("LabelSettings_fyjgl")
-metadata/_edit_use_anchors_ = true
 
 [node name="Rocha" type="Sprite2D" parent="." unique_id=1033741630]
 position = Vector2(384.00003, 136)
@@ -114,6 +100,20 @@ position = Vector2(472, 192)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1874914009]
 shape = SubResource("SegmentShape2D_otrat")
+
+[node name="Titulo" type="Label" parent="." unique_id=1420646289]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0004999995
+anchor_top = 0.2
+anchor_right = 1.0
+anchor_bottom = 0.264
+offset_left = 0.3199997
+offset_bottom = -0.040000916
+text = "Pass the Symplegades"
+label_settings = SubResource("LabelSettings_ytekd")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [connection signal="area_entered" from="Rocha2/ColisorRocha" to="." method="_on_colisor_rocha_area_entered"]
 [connection signal="area_entered" from="Barco/ColisorBarco" to="." method="_on_colisor_barco_area_entered"]

@@ -9,7 +9,7 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="LabelSettings" id="LabelSettings_otrat"]
+[sub_resource type="LabelSettings" id="LabelSettings_3f0ay"]
 font_color = Color(0, 0, 0, 1)
 
 [node name="Sisifo" type="Control" unique_id=1995805051 node_paths=PackedStringArray("caminho_pedra")]
@@ -59,17 +59,18 @@ grow_vertical = 2
 texture_normal = ExtResource("2_i5430")
 stretch_mode = 0
 
-[node name="Titulo" type="Label" parent="." unique_id=1083199590]
+[node name="Titulo" type="Label" parent="." unique_id=1219000871]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.4125
+anchor_left = -0.0004999995
 anchor_top = 0.2
-anchor_right = 0.51875
-anchor_bottom = 0.2
-offset_right = 40.0
-offset_bottom = 23.0
+anchor_right = 1.0
+anchor_bottom = 0.264
+offset_left = 0.3199997
+offset_bottom = -0.040000916
 text = "Help Sisyphus"
-label_settings = SubResource("LabelSettings_otrat")
+label_settings = SubResource("LabelSettings_3f0ay")
+horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Path2D/PathFollow2D/Pedra" to="." method="_on_pedra_pressed"]

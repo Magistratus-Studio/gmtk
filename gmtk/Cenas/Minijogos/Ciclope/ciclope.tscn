@@ -9,7 +9,7 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="LabelSettings" id="LabelSettings_ahksd"]
+[sub_resource type="LabelSettings" id="LabelSettings_2ikrp"]
 font_color = Color(0, 0, 0, 1)
 
 [node name="Ciclope" type="Control" unique_id=1125950825 node_paths=PackedStringArray("caminho_lanca", "lanca", "area_clique")]
@@ -46,19 +46,6 @@ loop = false
 scale = Vector2(0.1, 1)
 texture = ExtResource("2_2ikrp")
 
-[node name="Titulo" type="Label" parent="." unique_id=1350019279]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.4
-anchor_top = 0.22222222
-anchor_right = 0.63468754
-anchor_bottom = 0.28622222
-offset_right = -21.200012
-offset_bottom = -0.040000916
-text = "Blind the Ciclops"
-label_settings = SubResource("LabelSettings_ahksd")
-metadata/_edit_use_anchors_ = true
-
 [node name="Ciclope" type="Sprite2D" parent="." unique_id=399978521]
 position = Vector2(304, 168)
 scale = Vector2(0.5, 0.5)
@@ -74,5 +61,19 @@ offset_top = -160.0
 grow_horizontal = 2
 grow_vertical = 0
 flat = true
+
+[node name="Titulo" type="Label" parent="." unique_id=60822229]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0004999995
+anchor_top = 0.2
+anchor_right = 1.0
+anchor_bottom = 0.264
+offset_left = 0.3199997
+offset_bottom = -0.040000916
+text = "Blind the Ciclops"
+label_settings = SubResource("LabelSettings_2ikrp")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

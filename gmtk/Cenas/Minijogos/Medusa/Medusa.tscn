@@ -4,15 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://bc1ayuixxupfe" path="res://icon.svg" id="2_lw5el"]
 [ext_resource type="PackedScene" uid="uid://6410gl83k8s7" path="res://Cenas/Minijogos/Medusa/disparo.tscn" id="2_mg0gg"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_lw5el"]
-font_color = Color(0, 0, 0, 1)
-
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_otrat"]
 a = Vector2(160, -53)
 b = Vector2(160, 53)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_otrat"]
 size = Vector2(106.666664, 133.33337)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mg0gg"]
+font_color = Color(0, 0, 0, 1)
 
 [node name="Medusa" type="Control" unique_id=151856692 node_paths=PackedStringArray("perseu", "medusa", "timer_medusa", "area_medusa")]
 layout_mode = 3
@@ -36,19 +36,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Titulo" type="Label" parent="." unique_id=1843177564]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.375
-anchor_top = 0.17777778
-anchor_right = 0.664375
-anchor_bottom = 0.24177778
-offset_right = -21.200012
-offset_bottom = -0.040000916
-text = "Protect from Medusa"
-label_settings = SubResource("LabelSettings_lw5el")
-metadata/_edit_use_anchors_ = true
 
 [node name="Perseu" type="Sprite2D" parent="." unique_id=807745955]
 position = Vector2(320, 180)
@@ -95,6 +82,20 @@ offset_right = 192.0
 offset_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Titulo" type="Label" parent="." unique_id=1349264019]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0004999995
+anchor_top = 0.2
+anchor_right = 1.0
+anchor_bottom = 0.264
+offset_left = 0.3199997
+offset_bottom = -0.040000916
+text = "Protect from Medusa"
+label_settings = SubResource("LabelSettings_mg0gg")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [connection signal="area_entered" from="Perseu/Line2D/ColisaoBarreira" to="." method="_on_colisao_barreira_area_entered"]
 [connection signal="area_entered" from="Perseu/ColisaoPerseu" to="." method="_on_colisao_perseu_area_entered"]

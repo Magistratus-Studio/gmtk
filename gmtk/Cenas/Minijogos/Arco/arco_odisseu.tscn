@@ -6,9 +6,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_otrat"]
 size = Vector2(120.000015, 80.00012)
 
-[sub_resource type="LabelSettings" id="LabelSettings_ama0n"]
-font_color = Color(0, 0, 0, 1)
-
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_otrat"]
 a = Vector2(600, 112)
 b = Vector2(600, 264)
@@ -20,6 +17,9 @@ b = Vector2(552, 160)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_4mnnu"]
 a = Vector2(216, 208)
 b = Vector2(552, 208)
+
+[sub_resource type="LabelSettings" id="LabelSettings_42602"]
+font_color = Color(0, 0, 0, 1)
 
 [node name="ArcoOdisseu" type="Control" unique_id=1390438499 node_paths=PackedStringArray("odisseu", "flecha", "desafio")]
 layout_mode = 3
@@ -64,20 +64,6 @@ collision_mask = 6
 scale = Vector2(0.99999934, 0.99999934)
 shape = SubResource("RectangleShape2D_otrat")
 
-[node name="Titulo" type="Label" parent="." unique_id=1171573180]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.425
-anchor_top = 0.22200002
-anchor_right = 0.59106255
-anchor_bottom = 0.28622222
-offset_top = 0.0799942
-offset_right = -0.2800293
-offset_bottom = -0.040000916
-text = "Shoot the Arrow"
-label_settings = SubResource("LabelSettings_ama0n")
-metadata/_edit_use_anchors_ = true
-
 [node name="Desafio" type="Node2D" parent="." unique_id=1778881472]
 
 [node name="Alvo" type="Line2D" parent="Desafio" unique_id=737125854]
@@ -111,6 +97,20 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Desafio/Parede2/ColisorParede" unique_id=802611415]
 shape = SubResource("SegmentShape2D_4mnnu")
+
+[node name="Titulo" type="Label" parent="." unique_id=447816567]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0004999995
+anchor_top = 0.2
+anchor_right = 1.0
+anchor_bottom = 0.264
+offset_left = 0.3199997
+offset_bottom = -0.040000916
+text = "Shoot the Arrow"
+label_settings = SubResource("LabelSettings_42602")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [connection signal="screen_exited" from="Flecha/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="area_entered" from="Flecha/ColisorFlecha" to="." method="_on_colisor_flecha_area_entered"]
