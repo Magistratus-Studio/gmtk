@@ -13,11 +13,13 @@ var botao_atual: TextureButton = null
 @export var efeito_escala: float = 1.05
 @export var cor_alvo: Color = Color.RED
 var posicao_inicial: Vector2 = Vector2.ZERO
+var Orquestrador
 
 func iniciar() -> void:
 	super.iniciar()
 	
-	set_process(false)
+	Orquestrador = get_tree().get_nodes_in_group("orquestrador")[0]
+	
 	cabeca_container.add_theme_constant_override("separation", 8)
 	for filho in cabeca_container.get_children():
 		if filho is TextureButton:
@@ -32,6 +34,7 @@ func verificar_sucesso() -> bool:
 	return false
 
 func _process(delta: float) -> void:
+	$Sprite2D.global_position = get_global_mouse_position()
 	if botao_atual:
 		tempo_segurar += delta
 		var progresso: float = min(tempo_segurar / tempo_segurar_requerido, 1.0)
@@ -54,11 +57,9 @@ func _on_qualquer_botao_down(botao: TextureButton) -> void:
 	segurar_apertado = false
 	botao_atual.pivot_offset = botao_atual.size / 2
 	posicao_inicial = botao_atual.global_position
-	set_process(true)
 
 func _on_qualquer_botao_up(botao: TextureButton) -> void:
 	if botao_atual == botao:
-		set_process(false)
 		botao_atual.scale = Vector2.ONE
 		botao_atual.modulate = Color.WHITE
 		botao_atual.global_position = posicao_inicial
@@ -67,5 +68,6 @@ func _on_qualquer_botao_up(botao: TextureButton) -> void:
 
 func _on_segurar_sucesso(botao: TextureButton) -> void:
 	botao.queue_free()
+	Orquestrador.tocar_audio_sfx(load("res://Audios/SFX-1/hydra/hydra-boom.mp3"))
 	vitoria += 1
 	cabeca_container.add_theme_constant_override("separation", 32)

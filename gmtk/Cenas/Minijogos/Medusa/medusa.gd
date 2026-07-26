@@ -7,9 +7,11 @@ extends MinigameBase
 @export var escudo: AnimatedSprite2D
 
 var venceu: bool = true
+var Orquestrador
 
 func iniciar() -> void:
 	super.iniciar()
+	Orquestrador = get_tree().get_nodes_in_group("orquestrador")[0]
 
 func verificar_sucesso() -> bool:
 	if venceu:
@@ -48,10 +50,12 @@ func _on_timer_medusa_timeout() -> void:
 		medusa.flip_h = false
 	novo_disparo.global_position = medusa.global_position
 	add_child(novo_disparo)
+	Orquestrador.tocar_audio_sfx(load("res://Audios/SFX-1/medusa/medusa-shoot.mp3"))
 
 func _on_colisao_barreira_area_entered(area: Area2D) -> void:
 	if area.is_in_group("disparos"):
 		area.get_parent().queue_free()
+		Orquestrador.tocar_audio_sfx(load("res://Audios/SFX-1/medusa/shield-hit.mp3"))
 
 func _on_colisao_perseu_area_entered(area: Area2D) -> void:
 	if area.is_in_group("disparos"):

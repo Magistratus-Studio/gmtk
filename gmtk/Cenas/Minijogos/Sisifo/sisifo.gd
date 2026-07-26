@@ -5,11 +5,13 @@ extends MinigameBase
 @export var sisifu: AnimatedSprite2D
 
 var progresso_alvo: float = 0.0
+var Orquestrador
 
 func iniciar() -> void:
 	super.iniciar()
 	
 	caminho_pedra.progress_ratio = 0
+	Orquestrador = get_tree().get_nodes_in_group("orquestrador")[0]
 
 func verificar_sucesso() -> bool:
 	if caminho_pedra.progress_ratio >= 0.9:
@@ -27,4 +29,5 @@ func _process(delta: float) -> void:
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("clique_esquerdo"):
 		progresso_alvo += 0.2
+		Orquestrador.tocar_audio_sfx(load("res://Audios/SFX-1/sisyphus/grass.mp3"))
 	progresso_alvo = min(1.0, progresso_alvo)

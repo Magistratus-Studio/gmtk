@@ -36,6 +36,8 @@ func _on_button_pressed() -> void:
 	if tween and tween.is_running():
 		tween.kill()
 	tween = create_tween()
+	var Orquestrador = get_tree().get_nodes_in_group("orquestrador")[0]
+	Orquestrador.tocar_audio_sfx(load("res://Audios/SFX-1/cyclops/arrow.mp3"))
 	
 	if caminho_lanca.progress_ratio >= 0.45 and caminho_lanca.progress_ratio <= 0.55:
 		vitoria = true

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bjculms3pwg2t"]
 
 [ext_resource type="Script" uid="uid://1mg1wahe1bbf" path="res://Cenas/Minijogos/Hidra/hidra.gd" id="1_kbmje"]
-[ext_resource type="Texture2D" uid="uid://cqxyf375cu7md" path="res://Sprites/Fundo tela de inicio.png" id="2_qf2fo"]
+[ext_resource type="Texture2D" uid="uid://cg01p4rc06pg7" path="res://Sprites/fundo hidra.png" id="2_o0lje"]
 [ext_resource type="Texture2D" uid="uid://deghiqlyyvrqu" path="res://Sprites/Hidra.png" id="3_o0lje"]
 [ext_resource type="LabelSettings" uid="uid://dlnnkssqlns6o" path="res://Assets/fonte_principal.tres" id="4_o0lje"]
 
@@ -12,6 +12,10 @@ region = Rect2(33, 7, 46, 20)
 [sub_resource type="AtlasTexture" id="AtlasTexture_1i4hq"]
 atlas = ExtResource("3_o0lje")
 region = Rect2(81, 3, 14, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3yf8"]
+atlas = ExtResource("3_o0lje")
+region = Rect2(52, 32, 7, 16)
 
 [node name="Hidra" type="Control" unique_id=1258599585 node_paths=PackedStringArray("cabeca_container")]
 layout_mode = 3
@@ -31,7 +35,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_qf2fo")
+texture = ExtResource("2_o0lje")
 
 [node name="Corpo" type="TextureRect" parent="." unique_id=770278632]
 layout_mode = 1
@@ -101,3 +105,7 @@ text = "Kill the Hidra"
 label_settings = ExtResource("4_o0lje")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1184766427]
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_w3yf8")

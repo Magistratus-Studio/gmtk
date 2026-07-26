@@ -83,6 +83,7 @@ func _on_minigame_concluido(sucesso: bool) -> void:
 		# diminuir uma vida do hud
 		var vida: TextureRect = vidas_container.get_child(vidas)
 		vida.modulate = Color.DIM_GRAY
+		tocar_audio_sfx(load("res://Audios/SFX-1/lose.mp3"))
 		if vidas == 0:
 			Globais.vitoria = false
 			carregar_cena(tela_conclusao) # com derrota
