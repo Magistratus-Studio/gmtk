@@ -1,16 +1,29 @@
 [gd_scene format=3 uid="uid://5hx0nq0gfwen"]
 
 [ext_resource type="Script" uid="uid://dy43hx1no3yke" path="res://Cenas/Minijogos/Ciclope/ciclope.gd" id="1_mmlj4"]
-[ext_resource type="Texture2D" uid="uid://cqxyf375cu7md" path="res://Sprites/Fundo tela de inicio.png" id="2_kbalv"]
+[ext_resource type="Texture2D" uid="uid://b3g3viwdw77tm" path="res://Sprites/fundo ciclope.png" id="2_ahksd"]
 [ext_resource type="Texture2D" uid="uid://ckb728slm6yet" path="res://Sprites/Ciclope.png" id="3_ahksd"]
+[ext_resource type="Texture2D" uid="uid://bo34qnrkiggnw" path="res://Cenas/Minijogos/Ciclope/Ciclope (1).png" id="4_584db"]
 [ext_resource type="LabelSettings" uid="uid://dlnnkssqlns6o" path="res://Assets/fonte_principal.tres" id="4_ahksd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wf4b"]
+atlas = ExtResource("4_584db")
+region = Rect2(179, 100, 72, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_old6l"]
+atlas = ExtResource("4_584db")
+region = Rect2(38, 127, 66, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkkuv"]
+atlas = ExtResource("4_584db")
+region = Rect2(250, 1, 84, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4mnnu"]
 atlas = ExtResource("3_ahksd")
 region = Rect2(81, 2, 79, 93)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kbalv"]
-atlas = ExtResource("3_ahksd")
+atlas = ExtResource("4_584db")
 region = Rect2(5, 6, 54, 22)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1i4hq"]
@@ -50,6 +63,9 @@ script = ExtResource("1_mmlj4")
 caminho_lanca = NodePath("Path2D/PathFollow2D")
 lanca = NodePath("Path2D/PathFollow2D/Lanca")
 area_clique = NodePath("Button")
+olho_acertado = SubResource("AtlasTexture_6wf4b")
+boca_acertado = SubResource("AtlasTexture_old6l")
+rosto_acertado = SubResource("AtlasTexture_vkkuv")
 metadata/_custom_type_script = "uid://brfp8a3wxvhfk"
 
 [node name="Fundo" type="TextureRect" parent="." unique_id=383321072]
@@ -59,7 +75,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_kbalv")
+texture = ExtResource("2_ahksd")
 
 [node name="Ciclope" type="Sprite2D" parent="." unique_id=399978521]
 position = Vector2(320, 160)
@@ -69,14 +85,14 @@ texture = SubResource("AtlasTexture_4mnnu")
 [node name="Sprite2D2" type="Sprite2D" parent="Ciclope" unique_id=2111123039]
 texture = SubResource("AtlasTexture_kbalv")
 
-[node name="Sprite2D" type="Sprite2D" parent="Ciclope" unique_id=1185226787]
+[node name="Olho" type="Sprite2D" parent="Ciclope" unique_id=1185226787]
 texture = SubResource("AtlasTexture_1i4hq")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Ciclope" unique_id=1544309325]
 position = Vector2(0, -11.44)
 texture = SubResource("AtlasTexture_ahksd")
 
-[node name="Sprite2D3" type="Sprite2D" parent="Ciclope" unique_id=2070694549]
+[node name="Boca" type="Sprite2D" parent="Ciclope" unique_id=2070694549]
 position = Vector2(0, 24.715)
 texture = SubResource("AtlasTexture_584db")
 

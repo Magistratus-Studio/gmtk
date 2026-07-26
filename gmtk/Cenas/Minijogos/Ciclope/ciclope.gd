@@ -9,6 +9,9 @@ extends MinigameBase
 var vitoria: bool = false
 var velocidade: float = 0.7
 var tween: Tween
+@export var olho_acertado: AtlasTexture
+@export var boca_acertado: AtlasTexture
+@export var rosto_acertado: AtlasTexture
 
 func iniciar() -> void:
 	super.iniciar()
@@ -38,6 +41,11 @@ func _on_button_pressed() -> void:
 		vitoria = true
 		tween.tween_property(lanca, "position:y", distancia_estocada_certa, tempo_ida)\
 		.as_relative().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+		$Ciclope/Olho.texture = olho_acertado
+		$Ciclope/Olho.scale = Vector2(0.5,0.5)
+		$Ciclope/Boca.texture = boca_acertado
+		$Ciclope/Boca.global_position.y += 10
+		$Ciclope.texture = rosto_acertado
 	else:
 		tween.tween_property(lanca, "position:y", distancia_estocada_errada, tempo_ida)\
 			.as_relative().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
