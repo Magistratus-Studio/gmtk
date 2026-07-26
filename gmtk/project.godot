@@ -13,7 +13,7 @@ config_version=5
 config/name="Greek Rush"
 run/main_scene="uid://dtge0soaf8pvv"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://mlusowuajk3e"
 
 [autoload]
 
