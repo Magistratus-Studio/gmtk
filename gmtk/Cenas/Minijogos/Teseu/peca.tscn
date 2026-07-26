@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cpc6e43rruaga"]
+
+[ext_resource type="Texture2D" uid="uid://bc1ayuixxupfe" path="res://icon.svg" id="1_tl3ye"]
+[ext_resource type="Script" uid="uid://bdj5ufe8d50pc" path="res://Cenas/Minijogos/Teseu/peca.gd" id="1_uca1i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otrat"]
+size = Vector2(128, 128)
+
+[node name="Peca" type="Node2D" unique_id=1929093954]
+script = ExtResource("1_uca1i")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=593524414]
+texture = ExtResource("1_tl3ye")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1174998711]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1594868082]
+shape = SubResource("RectangleShape2D_otrat")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

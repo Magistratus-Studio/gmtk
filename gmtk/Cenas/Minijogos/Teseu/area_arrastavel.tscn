@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://uv6w05qfvh6s"]
+
+[ext_resource type="Script" uid="uid://pci2rpll32dj" path="res://Cenas/Minijogos/Teseu/area_arrastavel.gd" id="1_khhmq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otrat"]
+size = Vector2(128, 128)
+
+[node name="AreaArrastavel" type="StaticBody2D" unique_id=854221554]
+script = ExtResource("1_khhmq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2109964899]
+shape = SubResource("RectangleShape2D_otrat")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=344607427]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2

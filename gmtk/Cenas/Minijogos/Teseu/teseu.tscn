@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://wq113svfs4po"]
+
+[ext_resource type="Script" uid="uid://coyop68501sig" path="res://Cenas/Minijogos/Teseu/teseu.gd" id="1_bpq1e"]
+[ext_resource type="PackedScene" uid="uid://cpc6e43rruaga" path="res://Cenas/Minijogos/Teseu/peca.tscn" id="2_7bfs3"]
+[ext_resource type="PackedScene" uid="uid://uv6w05qfvh6s" path="res://Cenas/Minijogos/Teseu/area_arrastavel.tscn" id="3_6hpel"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_h44xp"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="Teseu" type="Control" unique_id=788905144]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_bpq1e")
+metadata/_custom_type_script = "uid://brfp8a3wxvhfk"
+
+[node name="Fundo" type="ColorRect" parent="." unique_id=303097296]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Titulo" type="Label" parent="." unique_id=1787171381]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0004999995
+anchor_top = 0.2
+anchor_right = 1.0
+anchor_bottom = 0.264
+offset_left = 0.3199997
+offset_bottom = -0.040000916
+text = "Fix the Ship of Theseus"
+label_settings = SubResource("LabelSettings_h44xp")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="." unique_id=1236271071]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0828125
+anchor_top = 0.3361111
+anchor_right = 0.5340625
+anchor_bottom = 0.9747778
+offset_right = 0.2000122
+offset_bottom = 0.07998657
+metadata/_edit_use_anchors_ = true
+
+[node name="Tabua" parent="." unique_id=1929093954 instance=ExtResource("2_7bfs3")]
+position = Vector2(559, 308)
+scale = Vector2(0.7, 0.3)
+meu_id = "tabua"
+
+[node name="Ancora" parent="." unique_id=2132067844 instance=ExtResource("2_7bfs3")]
+position = Vector2(461, 229)
+scale = Vector2(0.5, 0.5)
+meu_id = "ancora"
+
+[node name="Masto" parent="." unique_id=509927432 instance=ExtResource("2_7bfs3")]
+position = Vector2(561, 191)
+scale = Vector2(0.2, 1)
+meu_id = "masto"
+
+[node name="AreaMasto" parent="." unique_id=854221554 groups=["areas_de_drop", "dropable"] instance=ExtResource("3_6hpel")]
+position = Vector2(201, 162)
+scale = Vector2(0.2, 1)
+id_esperado = "masto"
+
+[node name="AreaAncora" parent="." unique_id=1789755185 groups=["areas_de_drop", "dropable"] instance=ExtResource("3_6hpel")]
+position = Vector2(294, 281)
+scale = Vector2(0.5, 0.5)
+id_esperado = "ancora"
+
+[node name="AreaTabua" parent="." unique_id=71116179 groups=["areas_de_drop", "dropable"] instance=ExtResource("3_6hpel")]
+position = Vector2(119, 296)
+scale = Vector2(0.7, 0.3)
+id_esperado = "tabua"
