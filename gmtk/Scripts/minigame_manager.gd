@@ -111,3 +111,7 @@ func sortear_minigames() -> Array[PackedScene]:
 		sorteados.append(minigames_disponiveis[1])
 		
 	return sorteados
+
+func tocar_audio_sfx(audio: AudioStream) -> void:
+	$AudioSFX.stream = audio
+	$AudioSFX.play()

@@ -4,9 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cqxyf375cu7md" path="res://Sprites/Fundo tela de inicio.png" id="2_qbhlb"]
 [ext_resource type="Texture2D" uid="uid://bc1ayuixxupfe" path="res://icon.svg" id="2_t457u"]
 [ext_resource type="PackedScene" uid="uid://b1s8y1sijb28g" path="res://Cenas/Minijogos/Aves/ave.tscn" id="3_gq1w6"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_gq1w6"]
-font_color = Color(0, 0, 0, 1)
+[ext_resource type="LabelSettings" uid="uid://dlnnkssqlns6o" path="res://Assets/fonte_principal.tres" id="5_1ppbn"]
 
 [node name="AvesEstifalo" type="Control" unique_id=1117180481 node_paths=PackedStringArray("contador_aves", "container_aves")]
 layout_mode = 3
@@ -111,6 +109,6 @@ anchor_bottom = 0.264
 offset_left = 0.3199997
 offset_bottom = -0.040000916
 text = "Kill the Stymphalian Birds"
-label_settings = SubResource("LabelSettings_gq1w6")
+label_settings = ExtResource("5_1ppbn")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true

@@ -4,9 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cqxyf375cu7md" path="res://Sprites/Fundo tela de inicio.png" id="2_6hpel"]
 [ext_resource type="PackedScene" uid="uid://cpc6e43rruaga" path="res://Cenas/Minijogos/Teseu/peca.tscn" id="2_7bfs3"]
 [ext_resource type="PackedScene" uid="uid://uv6w05qfvh6s" path="res://Cenas/Minijogos/Teseu/area_arrastavel.tscn" id="3_6hpel"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_h44xp"]
-font_color = Color(0, 0, 0, 1)
+[ext_resource type="LabelSettings" uid="uid://dlnnkssqlns6o" path="res://Assets/fonte_principal.tres" id="3_n2nta"]
 
 [node name="Teseu" type="Control" unique_id=788905144]
 layout_mode = 3
@@ -38,7 +36,7 @@ anchor_bottom = 0.264
 offset_left = 0.3199997
 offset_bottom = -0.040000916
 text = "Fix the Ship of Theseus"
-label_settings = SubResource("LabelSettings_h44xp")
+label_settings = ExtResource("3_n2nta")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 

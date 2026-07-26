@@ -2,10 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bfbam7k6blmos" path="res://Scripts/seletor_caminho.gd" id="1_xfh7h"]
 [ext_resource type="Texture2D" uid="uid://cqxyf375cu7md" path="res://Sprites/Fundo tela de inicio.png" id="2_nc73i"]
-[ext_resource type="Theme" uid="uid://b5q3uqdve1ja6" path="res://Sprites/tema_botoes.tres" id="3_hej73"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_xfh7h"]
-font_color = Color(0, 0, 0, 1)
+[ext_resource type="Theme" uid="uid://b5q3uqdve1ja6" path="res://Assets/tema_botoes.tres" id="3_hej73"]
+[ext_resource type="LabelSettings" uid="uid://dlnnkssqlns6o" path="res://Assets/fonte_principal.tres" id="4_hej73"]
 
 [node name="SeletorCaminho" type="Control" unique_id=188329596 groups=["seletor"]]
 layout_mode = 3
@@ -60,7 +58,7 @@ anchor_bottom = 0.264
 offset_left = 0.3199997
 offset_bottom = -0.040000916
 text = "Chose Your Destiny"
-label_settings = SubResource("LabelSettings_xfh7h")
+label_settings = ExtResource("4_hej73")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 

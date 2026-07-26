@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cs5xb63jk6stj" path="res://Scripts/menu_controller.gd" id="1_4ahfv"]
 [ext_resource type="Texture2D" uid="uid://cqxyf375cu7md" path="res://Sprites/Fundo tela de inicio.png" id="2_sm8o4"]
-[ext_resource type="Theme" uid="uid://b5q3uqdve1ja6" path="res://Sprites/tema_botoes.tres" id="3_qdvqo"]
+[ext_resource type="Theme" uid="uid://b5q3uqdve1ja6" path="res://Assets/tema_botoes.tres" id="3_qdvqo"]
 
 [node name="MenuInicial" type="Control" unique_id=1398046020]
 layout_mode = 3

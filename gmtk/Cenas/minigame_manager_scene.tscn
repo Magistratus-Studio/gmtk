@@ -13,11 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://d2yt5lwvfw3uh" path="res://Cenas/Minijogos/Medusa/Medusa.tscn" id="11_eq1h1"]
 [ext_resource type="PackedScene" uid="uid://5hx0nq0gfwen" path="res://Cenas/Minijogos/Ciclope/ciclope.tscn" id="12_arl2q"]
 [ext_resource type="PackedScene" uid="uid://d1qeky4720sqw" path="res://Cenas/Minijogos/Sisifo/Sisifo.tscn" id="13_uud8v"]
-[ext_resource type="Texture2D" uid="uid://bc1ayuixxupfe" path="res://icon.svg" id="14_g8ekr"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_lauj7"]
-font_size = 14
-font_color = Color(0, 0, 0, 1)
+[ext_resource type="Texture2D" uid="uid://cehcier1np2hq" path="res://Sprites/Vida-1.png.png" id="14_g8ekr"]
+[ext_resource type="LabelSettings" uid="uid://dlnnkssqlns6o" path="res://Assets/fonte_principal.tres" id="15_bdi2s"]
 
 [node name="MinigameManagerScene" type="Control" unique_id=1923513264 node_paths=PackedStringArray("timer_minigame", "vidas_container", "label_timer_minigame", "hud", "scene_controller") groups=["orquestrador"]]
 z_index = 1
@@ -63,9 +60,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -18.0
-offset_right = 18.0
-offset_bottom = 44.0
+offset_left = -49.0
+offset_top = 19.02
+offset_right = 49.0
+offset_bottom = 73.02002
 grow_horizontal = 2
 
 [node name="VidaContainer" type="HBoxContainer" parent="HudTimers/VBoxContainer2" unique_id=373210906]
@@ -76,12 +74,12 @@ custom_maximum_size = Vector2(30, 30)
 layout_mode = 2
 texture = ExtResource("14_g8ekr")
 
-[node name="Vida2" type="TextureRect" parent="HudTimers/VBoxContainer2/VidaContainer" unique_id=1027931046]
+[node name="Vida2" type="TextureRect" parent="HudTimers/VBoxContainer2/VidaContainer" unique_id=1992865998]
 custom_maximum_size = Vector2(30, 30)
 layout_mode = 2
 texture = ExtResource("14_g8ekr")
 
-[node name="Vida3" type="TextureRect" parent="HudTimers/VBoxContainer2/VidaContainer" unique_id=165951761]
+[node name="Vida3" type="TextureRect" parent="HudTimers/VBoxContainer2/VidaContainer" unique_id=1895149445]
 custom_maximum_size = Vector2(30, 30)
 layout_mode = 2
 texture = ExtResource("14_g8ekr")
@@ -89,9 +87,17 @@ texture = ExtResource("14_g8ekr")
 [node name="LabelTimerMinigame" type="Label" parent="HudTimers/VBoxContainer2" unique_id=1447960999]
 layout_mode = 2
 text = "texto"
-label_settings = SubResource("LabelSettings_lauj7")
+label_settings = ExtResource("15_bdi2s")
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioGlobal" type="AudioStreamPlayer" parent="." unique_id=1850954377]
+
+[node name="AudioSFX" type="AudioStreamPlayer" parent="." unique_id=484488027]
+bus = &"SFX"
+
+[node name="AudioFUNDO" type="AudioStreamPlayer" parent="." unique_id=1176110561]
+bus = &"BACKGROUND"
 
 [connection signal="timeout" from="TimerMinigame" to="." method="_on_timer_minigame_timeout"]

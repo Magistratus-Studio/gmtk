@@ -1,0 +1,13 @@
+[gd_resource type="Theme" format=3 uid="uid://b5q3uqdve1ja6"]
+
+[ext_resource type="FontFile" uid="uid://ckh70sq6hvymg" path="res://Assets/CaesarDressing-Regular.ttf" id="1_nxnag"]
+[ext_resource type="StyleBox" uid="uid://brlbh6wmus6pb" path="res://Assets/textura_botao.tres" id="2_3mqs2"]
+
+[resource]
+Button/colors/font_hover_color = Color(0.7477986, 0.755198, 0.8987216, 1)
+Button/fonts/font = ExtResource("1_nxnag")
+Button/styles/disabled = ExtResource("2_3mqs2")
+Button/styles/focus = ExtResource("2_3mqs2")
+Button/styles/hover = ExtResource("2_3mqs2")
+Button/styles/normal = ExtResource("2_3mqs2")
+Button/styles/pressed = ExtResource("2_3mqs2")

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dy43hx1no3yke" path="res://Cenas/Minijogos/Ciclope/ciclope.gd" id="1_mmlj4"]
 [ext_resource type="Texture2D" uid="uid://cqxyf375cu7md" path="res://Sprites/Fundo tela de inicio.png" id="2_kbalv"]
 [ext_resource type="Texture2D" uid="uid://ckb728slm6yet" path="res://Sprites/Ciclope.png" id="3_ahksd"]
+[ext_resource type="LabelSettings" uid="uid://dlnnkssqlns6o" path="res://Assets/fonte_principal.tres" id="4_ahksd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4mnnu"]
 atlas = ExtResource("3_ahksd")
@@ -33,9 +34,6 @@ point_count = 2
 [sub_resource type="AtlasTexture" id="AtlasTexture_otrat"]
 atlas = ExtResource("3_ahksd")
 region = Rect2(145, 98, 15, 60)
-
-[sub_resource type="LabelSettings" id="LabelSettings_2ikrp"]
-font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w3yf8"]
 atlas = ExtResource("3_ahksd")
@@ -114,7 +112,7 @@ anchor_bottom = 0.264
 offset_left = 0.3199997
 offset_bottom = -0.040000916
 text = "Blind the Ciclops"
-label_settings = SubResource("LabelSettings_2ikrp")
+label_settings = ExtResource("4_ahksd")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 

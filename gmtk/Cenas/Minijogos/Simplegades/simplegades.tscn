@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cwu7rramflqp7" path="res://Cenas/Minijogos/Simplegades/simplegades.gd" id="1_oevjl"]
 [ext_resource type="Texture2D" uid="uid://cqxyf375cu7md" path="res://Sprites/Fundo tela de inicio.png" id="2_fyjgl"]
 [ext_resource type="Texture2D" uid="uid://bc1ayuixxupfe" path="res://icon.svg" id="2_ytekd"]
+[ext_resource type="LabelSettings" uid="uid://dlnnkssqlns6o" path="res://Assets/fonte_principal.tres" id="4_07u7w"]
 
 [sub_resource type="Gradient" id="Gradient_ytekd"]
 offsets = PackedFloat32Array(0, 0.40131578, 1)
@@ -19,9 +20,6 @@ size = Vector2(128, 80)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_otrat"]
 b = Vector2(0, 64)
-
-[sub_resource type="LabelSettings" id="LabelSettings_ytekd"]
-font_color = Color(0, 0, 0, 1)
 
 [node name="Simplegades" type="Control" unique_id=401489949 node_paths=PackedStringArray("rocha_cima", "rocha_baixo", "barco", "barra_forca")]
 layout_mode = 3
@@ -112,7 +110,7 @@ anchor_bottom = 0.264
 offset_left = 0.3199997
 offset_bottom = -0.040000916
 text = "Pass the Symplegades"
-label_settings = SubResource("LabelSettings_ytekd")
+label_settings = ExtResource("4_07u7w")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 

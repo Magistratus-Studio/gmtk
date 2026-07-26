@@ -2,10 +2,15 @@
 
 [ext_resource type="Script" uid="uid://bmrplr7nyn7ev" path="res://Cenas/Minijogos/Submundo/submundo.gd" id="1_ecwns"]
 [ext_resource type="Texture2D" uid="uid://cqxyf375cu7md" path="res://Sprites/Fundo tela de inicio.png" id="2_5t187"]
-[ext_resource type="Theme" uid="uid://b5q3uqdve1ja6" path="res://Sprites/tema_botoes.tres" id="3_beag6"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_5t187"]
-font_color = Color(0, 0, 0, 1)
+[ext_resource type="AudioStream" uid="uid://2dodkmc82h5h" path="res://Cenas/Minijogos/Submundo/A.wav" id="2_48ita"]
+[ext_resource type="Theme" uid="uid://b5q3uqdve1ja6" path="res://Assets/tema_botoes.tres" id="3_beag6"]
+[ext_resource type="AudioStream" uid="uid://cq608lgdjlhs4" path="res://Cenas/Minijogos/Submundo/B.wav" id="3_rwxvu"]
+[ext_resource type="AudioStream" uid="uid://2r57pwhfrkbe" path="res://Cenas/Minijogos/Submundo/C.wav" id="4_7aehe"]
+[ext_resource type="AudioStream" uid="uid://qxh8han7g47p" path="res://Cenas/Minijogos/Submundo/D.wav" id="5_osktp"]
+[ext_resource type="AudioStream" uid="uid://brx7l6ssooabf" path="res://Cenas/Minijogos/Submundo/E.wav" id="6_rv0r0"]
+[ext_resource type="AudioStream" uid="uid://dlqebum3pbiro" path="res://Cenas/Minijogos/Submundo/F.wav" id="7_tskci"]
+[ext_resource type="AudioStream" uid="uid://d3xwqa6oqlf1j" path="res://Cenas/Minijogos/Submundo/G.wav" id="8_e08dj"]
+[ext_resource type="LabelSettings" uid="uid://dlnnkssqlns6o" path="res://Assets/fonte_principal.tres" id="10_rwxvu"]
 
 [node name="Submundo" type="Control" unique_id=530038715 node_paths=PackedStringArray("notas", "teclado", "porta")]
 layout_mode = 3
@@ -18,6 +23,7 @@ script = ExtResource("1_ecwns")
 notas = NodePath("Notas")
 teclado = NodePath("Teclado")
 porta = NodePath("Panel/Status")
+audios = Array[AudioStreamWAV]([ExtResource("2_48ita"), ExtResource("3_rwxvu"), ExtResource("4_7aehe"), ExtResource("5_osktp"), ExtResource("6_rv0r0"), ExtResource("7_tskci"), ExtResource("8_e08dj")])
 metadata/_custom_type_script = "uid://brfp8a3wxvhfk"
 
 [node name="Fundo" type="TextureRect" parent="." unique_id=1235849010]
@@ -39,7 +45,7 @@ anchor_bottom = 0.264
 offset_left = 0.3199997
 offset_bottom = -0.040000916
 text = "Enter Hades Domain"
-label_settings = SubResource("LabelSettings_5t187")
+label_settings = ExtResource("10_rwxvu")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
@@ -53,7 +59,7 @@ anchor_bottom = 0.611
 offset_top = 0.0799942
 offset_right = 0.1199646
 offset_bottom = 0.039993286
-label_settings = SubResource("LabelSettings_5t187")
+label_settings = ExtResource("10_rwxvu")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
@@ -86,7 +92,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Closed"
-label_settings = SubResource("LabelSettings_5t187")
+label_settings = ExtResource("10_rwxvu")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 

@@ -8,6 +8,7 @@ var notas_tocadas: Array[int] = []
 @export var notas: Label
 @export var teclado: GridContainer
 @export var porta: Label
+@export var audios: Array[AudioStreamWAV]
 
 func iniciar() -> void:
 	super.iniciar()
@@ -28,6 +29,8 @@ func verificar_sucesso() -> bool:
 	return false
 
 func _on_botao_pressed(botao: Button) -> void:
+	var Orquestrador = get_tree().get_nodes_in_group("orquestrador")[0]
+	Orquestrador.tocar_audio_sfx(audios[NOTAS[botao.name]])
 	if notas_tocadas.size() != senha.size():
 		notas_tocadas.append(NOTAS[botao.name])
 	else:

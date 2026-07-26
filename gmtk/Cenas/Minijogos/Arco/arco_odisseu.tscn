@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dhl0adgqlv55h" path="res://Cenas/Minijogos/Arco/arco_odisseu.gd" id="1_e0rc7"]
 [ext_resource type="Texture2D" uid="uid://cqxyf375cu7md" path="res://Sprites/Fundo tela de inicio.png" id="2_ama0n"]
 [ext_resource type="Texture2D" uid="uid://bgbwipl51x5a7" path="res://Sprites/Odisseu.png" id="3_fvfon"]
+[ext_resource type="LabelSettings" uid="uid://dlnnkssqlns6o" path="res://Assets/fonte_principal.tres" id="4_fvfon"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_otrat"]
 atlas = ExtResource("3_fvfon")
@@ -11,13 +12,6 @@ region = Rect2(37, 0, 25, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_y1mm1"]
 atlas = ExtResource("3_fvfon")
 region = Rect2(65, 2, 14, 25)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ipbtg"]
-atlas = ExtResource("3_fvfon")
-region = Rect2(81, 11, 13, 7)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_otrat"]
-size = Vector2(12.333336, 3.333333)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w3yf8"]
 atlas = ExtResource("3_fvfon")
@@ -39,8 +33,16 @@ b = Vector2(552, 160)
 a = Vector2(216, 208)
 b = Vector2(552, 208)
 
-[sub_resource type="LabelSettings" id="LabelSettings_42602"]
-font_color = Color(0, 0, 0, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipbtg"]
+atlas = ExtResource("3_fvfon")
+region = Rect2(81, 11, 13, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otrat"]
+size = Vector2(12.333336, 3.333333)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1i4hq"]
+atlas = ExtResource("3_fvfon")
+region = Rect2(6, 3, 23, 29)
 
 [node name="ArcoOdisseu" type="Control" unique_id=1390438499 node_paths=PackedStringArray("odisseu", "flecha", "desafio")]
 layout_mode = 3
@@ -73,22 +75,6 @@ texture = SubResource("AtlasTexture_otrat")
 position = Vector2(112, 184)
 scale = Vector2(3, 3)
 texture = SubResource("AtlasTexture_y1mm1")
-
-[node name="Flecha" type="Sprite2D" parent="." unique_id=1680771823]
-position = Vector2(112, 184)
-scale = Vector2(3, 3)
-texture = SubResource("AtlasTexture_ipbtg")
-
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Flecha" unique_id=1705163677]
-scale = Vector2(0.99999994, 0.99999994)
-rect = Rect2(-6.333336, -1.6666679, 12.333336, 3.333332)
-
-[node name="ColisorFlecha" type="Area2D" parent="Flecha" unique_id=1428749366]
-collision_mask = 6
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Flecha/ColisorFlecha" unique_id=762438496]
-position = Vector2(-0.16666794, 0)
-shape = SubResource("RectangleShape2D_otrat")
 
 [node name="Desafio" type="Node2D" parent="." unique_id=1778881472]
 
@@ -173,6 +159,27 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Desafio/ColisorParede2" unique_id=802611415]
 shape = SubResource("SegmentShape2D_4mnnu")
 
+[node name="Flecha" type="Sprite2D" parent="." unique_id=1680771823]
+position = Vector2(112, 184)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_ipbtg")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Flecha" unique_id=1705163677]
+scale = Vector2(0.99999994, 0.99999994)
+rect = Rect2(-6.333336, -1.6666679, 12.333336, 3.333332)
+
+[node name="ColisorFlecha" type="Area2D" parent="Flecha" unique_id=1428749366]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flecha/ColisorFlecha" unique_id=762438496]
+position = Vector2(-0.16666794, 0)
+shape = SubResource("RectangleShape2D_otrat")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=668743208]
+position = Vector2(35, 135)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_1i4hq")
+
 [node name="Titulo" type="Label" parent="." unique_id=447816567]
 layout_mode = 1
 anchors_preset = -1
@@ -183,7 +190,7 @@ anchor_bottom = 0.264
 offset_left = 0.3199997
 offset_bottom = -0.040000916
 text = "Shoot the Arrow"
-label_settings = SubResource("LabelSettings_42602")
+label_settings = ExtResource("4_fvfon")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
