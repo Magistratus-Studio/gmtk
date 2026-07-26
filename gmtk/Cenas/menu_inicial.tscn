@@ -45,6 +45,7 @@ text = "Start"
 metadata/_edit_use_anchors_ = true
 
 [node name="ConfigButton" type="Button" parent="VBoxContainer" unique_id=605785719]
+visible = false
 layout_mode = 2
 theme = ExtResource("3_qdvqo")
 text = "Configuration"
