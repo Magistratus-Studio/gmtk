@@ -7,6 +7,7 @@ signal minigame_selecionado(minigame: PackedScene)
 @export var hidra: PackedScene
 @export var odisseu: PackedScene
 @export var estifalo: PackedScene
+@export var simplegades: PackedScene
 
 func _on_button_2_pressed() -> void:
 	minigame_selecionado.emit(sisifus)
@@ -25,3 +26,6 @@ func _on_button_5_pressed() -> void:
 
 func _on_button_6_pressed() -> void:
 	minigame_selecionado.emit(estifalo)
+
+func _on_button_7_pressed() -> void:
+	minigame_selecionado.emit(simplegades)

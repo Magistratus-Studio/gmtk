@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bjculms3pwg2t" path="res://Cenas/Minijogos/Hidra/hidra.tscn" id="5_y1mm1"]
 [ext_resource type="PackedScene" uid="uid://d3sot5xgqkdv8" path="res://Cenas/Minijogos/Arco/arco_odisseu.tscn" id="6_ipbtg"]
 [ext_resource type="PackedScene" uid="uid://bgwj7u2ooc3w3" path="res://Cenas/Minijogos/Aves/aves_estifalo.tscn" id="7_tck4q"]
+[ext_resource type="PackedScene" uid="uid://cmci35ph4i50f" path="res://Cenas/Minijogos/Simplegades/simplegades.tscn" id="8_r37qa"]
 
 [node name="SeletorCaminho" type="Control" unique_id=188329596 groups=["seletor"]]
 layout_mode = 3
@@ -22,6 +23,7 @@ medusa = ExtResource("4_hej73")
 hidra = ExtResource("5_y1mm1")
 odisseu = ExtResource("6_ipbtg")
 estifalo = ExtResource("7_tck4q")
+simplegades = ExtResource("8_r37qa")
 
 [node name="Fundo" type="ColorRect" parent="." unique_id=155421700]
 layout_mode = 1
@@ -32,6 +34,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1308282382]
+custom_maximum_size = Vector2(640, -1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -69,6 +72,10 @@ text = "Odysseus"
 layout_mode = 2
 text = "Stymphalian Birds"
 
+[node name="Button7" type="Button" parent="HBoxContainer" unique_id=1604295452]
+layout_mode = 2
+text = "Symplegades"
+
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
@@ -76,3 +83,4 @@ text = "Stymphalian Birds"
 [connection signal="pressed" from="HBoxContainer/Button4" to="." method="_on_button_4_pressed"]
 [connection signal="pressed" from="HBoxContainer/Button5" to="." method="_on_button_5_pressed"]
 [connection signal="pressed" from="HBoxContainer/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button7" to="." method="_on_button_7_pressed"]

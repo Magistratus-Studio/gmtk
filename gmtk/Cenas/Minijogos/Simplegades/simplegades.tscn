@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://cmci35ph4i50f"]
+
+[ext_resource type="Script" uid="uid://cwu7rramflqp7" path="res://Cenas/Minijogos/Simplegades/simplegades.gd" id="1_oevjl"]
+[ext_resource type="Texture2D" uid="uid://bc1ayuixxupfe" path="res://icon.svg" id="2_ytekd"]
+
+[sub_resource type="Gradient" id="Gradient_ytekd"]
+offsets = PackedFloat32Array(0, 0.40131578, 1)
+colors = PackedColorArray(0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fyjgl"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otrat"]
+size = Vector2(128.00003, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4mnnu"]
+size = Vector2(128, 128.00003)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3yf8"]
+size = Vector2(128, 80)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_otrat"]
+b = Vector2(0, 64)
+
+[node name="Simplegades" type="Control" unique_id=401489949 node_paths=PackedStringArray("rocha_cima", "rocha_baixo", "barco", "barra_forca")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oevjl")
+rocha_cima = NodePath("Rocha")
+rocha_baixo = NodePath("Rocha2")
+barco = NodePath("Barco")
+barra_forca = NodePath("BarraForca")
+gradiente_de_cor = SubResource("Gradient_ytekd")
+metadata/_custom_type_script = "uid://brfp8a3wxvhfk"
+
+[node name="Fundo" type="ColorRect" parent="." unique_id=150242788]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Titulo" type="Label" parent="." unique_id=1341337896]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.1997778
+anchor_right = 0.61700004
+anchor_bottom = 0.2637778
+offset_top = 0.0799942
+offset_right = 0.1199646
+offset_bottom = 0.039993286
+text = "Pass the Symplegades"
+label_settings = SubResource("LabelSettings_fyjgl")
+metadata/_edit_use_anchors_ = true
+
+[node name="Rocha" type="Sprite2D" parent="." unique_id=1033741630]
+position = Vector2(384.00003, 136)
+scale = Vector2(0.5, 0.625)
+texture = ExtResource("2_ytekd")
+
+[node name="Area2D" type="Area2D" parent="Rocha" unique_id=360728540]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rocha/Area2D" unique_id=889817169]
+position = Vector2(-6.1035156e-05, 0)
+shape = SubResource("RectangleShape2D_otrat")
+
+[node name="Rocha2" type="Sprite2D" parent="." unique_id=1165507798]
+position = Vector2(384, 312)
+scale = Vector2(0.5, 0.625)
+texture = ExtResource("2_ytekd")
+
+[node name="ColisorRocha" type="Area2D" parent="Rocha2" unique_id=751095455]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rocha2/ColisorRocha" unique_id=1387475445]
+shape = SubResource("RectangleShape2D_4mnnu")
+
+[node name="Barco" type="Sprite2D" parent="." unique_id=837464441]
+position = Vector2(120, 228.8)
+scale = Vector2(0.5, 0.2)
+texture = ExtResource("2_ytekd")
+
+[node name="ColisorBarco" type="Area2D" parent="Barco" unique_id=345278929]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barco/ColisorBarco" unique_id=1068092048]
+shape = SubResource("RectangleShape2D_w3yf8")
+
+[node name="BarraForca" type="ProgressBar" parent="." unique_id=105426117]
+custom_maximum_size = Vector2(200, -1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.075
+anchor_top = 0.7022222
+anchor_right = 0.30575
+anchor_bottom = 0.7465555
+offset_right = -3.680008
+offset_bottom = 0.040008545
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=335261440 groups=["alvo"]]
+position = Vector2(472, 192)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1874914009]
+shape = SubResource("SegmentShape2D_otrat")
+
+[connection signal="area_entered" from="Rocha2/ColisorRocha" to="." method="_on_colisor_rocha_area_entered"]
+[connection signal="area_entered" from="Barco/ColisorBarco" to="." method="_on_colisor_barco_area_entered"]
