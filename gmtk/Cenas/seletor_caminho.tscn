@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://b1a13bxuslybc"]
 
 [ext_resource type="Script" uid="uid://bfbam7k6blmos" path="res://Scripts/seletor_caminho.gd" id="1_xfh7h"]
+[ext_resource type="Texture2D" uid="uid://cqxyf375cu7md" path="res://Sprites/Fundo tela de inicio.png" id="2_nc73i"]
+[ext_resource type="Theme" uid="uid://b5q3uqdve1ja6" path="res://Sprites/tema_botoes.tres" id="3_hej73"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xfh7h"]
 font_color = Color(0, 0, 0, 1)
@@ -14,13 +16,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xfh7h")
 
-[node name="Fundo" type="ColorRect" parent="." unique_id=155421700]
+[node name="Fundo" type="TextureRect" parent="." unique_id=1876501250]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_nc73i")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1963682467]
 layout_mode = 1
@@ -35,13 +38,16 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 25
 
 [node name="Button" type="Button" parent="HBoxContainer" unique_id=237881189]
 layout_mode = 2
+theme = ExtResource("3_hej73")
 text = "Ciclops"
 
 [node name="Button2" type="Button" parent="HBoxContainer" unique_id=1660411459]
 layout_mode = 2
+theme = ExtResource("3_hej73")
 text = "Sisyphus"
 
 [node name="Titulo" type="Label" parent="." unique_id=285581555]

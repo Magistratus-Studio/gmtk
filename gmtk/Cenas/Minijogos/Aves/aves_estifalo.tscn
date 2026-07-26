@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bgwj7u2ooc3w3"]
 
 [ext_resource type="Script" uid="uid://c26rpo23s7nk4" path="res://Cenas/Minijogos/Aves/aves_estifalo.gd" id="1_nind8"]
+[ext_resource type="Texture2D" uid="uid://cqxyf375cu7md" path="res://Sprites/Fundo tela de inicio.png" id="2_qbhlb"]
 [ext_resource type="Texture2D" uid="uid://bc1ayuixxupfe" path="res://icon.svg" id="2_t457u"]
 [ext_resource type="PackedScene" uid="uid://b1s8y1sijb28g" path="res://Cenas/Minijogos/Aves/ave.tscn" id="3_gq1w6"]
 
@@ -20,14 +21,14 @@ contador_aves = NodePath("ContadorAves")
 container_aves = NodePath("AvesContainer")
 metadata/_custom_type_script = "uid://brfp8a3wxvhfk"
 
-[node name="Fundo" type="ColorRect" parent="." unique_id=829709209]
+[node name="Fundo" type="TextureRect" parent="." unique_id=1593606594]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
+texture = ExtResource("2_qbhlb")
 
 [node name="TimerAves" type="Timer" parent="." unique_id=1977639142]
 autostart = true

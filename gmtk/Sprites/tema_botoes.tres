@@ -1,0 +1,10 @@
+[gd_resource type="Theme" format=3 uid="uid://b5q3uqdve1ja6"]
+
+[ext_resource type="StyleBox" uid="uid://brlbh6wmus6pb" path="res://Sprites/textura_botao.tres" id="1_v0d1d"]
+
+[resource]
+Button/styles/disabled = ExtResource("1_v0d1d")
+Button/styles/focus = ExtResource("1_v0d1d")
+Button/styles/hover = ExtResource("1_v0d1d")
+Button/styles/normal = ExtResource("1_v0d1d")
+Button/styles/pressed = ExtResource("1_v0d1d")

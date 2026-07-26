@@ -1,10 +1,31 @@
 [gd_scene format=3 uid="uid://d3sot5xgqkdv8"]
 
 [ext_resource type="Script" uid="uid://dhl0adgqlv55h" path="res://Cenas/Minijogos/Arco/arco_odisseu.gd" id="1_e0rc7"]
-[ext_resource type="Texture2D" uid="uid://bc1ayuixxupfe" path="res://icon.svg" id="2_42602"]
+[ext_resource type="Texture2D" uid="uid://cqxyf375cu7md" path="res://Sprites/Fundo tela de inicio.png" id="2_ama0n"]
+[ext_resource type="Texture2D" uid="uid://bgbwipl51x5a7" path="res://Sprites/Odisseu.png" id="3_fvfon"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otrat"]
+atlas = ExtResource("3_fvfon")
+region = Rect2(37, 0, 25, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1mm1"]
+atlas = ExtResource("3_fvfon")
+region = Rect2(65, 2, 14, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipbtg"]
+atlas = ExtResource("3_fvfon")
+region = Rect2(81, 11, 13, 7)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_otrat"]
-size = Vector2(120.000015, 80.00012)
+size = Vector2(12.333336, 3.333333)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3yf8"]
+atlas = ExtResource("3_fvfon")
+region = Rect2(0, 67, 48, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mnnu"]
+atlas = ExtResource("3_fvfon")
+region = Rect2(50, 33, 13, 29)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_otrat"]
 a = Vector2(600, 112)
@@ -29,73 +50,127 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e0rc7")
-odisseu = NodePath("Odisseu")
+odisseu = NodePath("Arco")
 flecha = NodePath("Flecha")
 desafio = NodePath("Desafio")
 metadata/_custom_type_script = "uid://brfp8a3wxvhfk"
 
-[node name="Fundo" type="ColorRect" parent="." unique_id=1421908001]
+[node name="Fundo" type="TextureRect" parent="." unique_id=1664688597]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_ama0n")
 
-[node name="Odisseu" type="Sprite2D" parent="." unique_id=1069948681]
+[node name="Odisseu" type="Sprite2D" parent="." unique_id=752674531]
+position = Vector2(91, 198)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_otrat")
+
+[node name="Arco" type="Sprite2D" parent="." unique_id=1069948681]
 position = Vector2(112, 184)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_42602")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_y1mm1")
 
 [node name="Flecha" type="Sprite2D" parent="." unique_id=1680771823]
 position = Vector2(112, 184)
-scale = Vector2(0.4, 0.1)
-texture = ExtResource("2_42602")
-offset = Vector2(80, 0)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_ipbtg")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Flecha" unique_id=1705163677]
 scale = Vector2(0.99999994, 0.99999994)
+rect = Rect2(-6.333336, -1.6666679, 12.333336, 3.333332)
 
 [node name="ColisorFlecha" type="Area2D" parent="Flecha" unique_id=1428749366]
-position = Vector2(79.99999, 0)
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flecha/ColisorFlecha" unique_id=762438496]
-scale = Vector2(0.99999934, 0.99999934)
+position = Vector2(-0.16666794, 0)
 shape = SubResource("RectangleShape2D_otrat")
 
 [node name="Desafio" type="Node2D" parent="." unique_id=1778881472]
 
-[node name="Alvo" type="Line2D" parent="Desafio" unique_id=737125854]
-points = PackedVector2Array(600, 112, 600, 264)
-default_color = Color(0, 0, 0, 1)
+[node name="Machado" type="Sprite2D" parent="Desafio" unique_id=1775888791]
+position = Vector2(244, 220)
+texture = SubResource("AtlasTexture_w3yf8")
+
+[node name="Machado2" type="Sprite2D" parent="Desafio" unique_id=1255677489]
+position = Vector2(300, 220)
+texture = SubResource("AtlasTexture_w3yf8")
+
+[node name="Machado3" type="Sprite2D" parent="Desafio" unique_id=1684227666]
+position = Vector2(355, 220)
+texture = SubResource("AtlasTexture_w3yf8")
+
+[node name="Machado4" type="Sprite2D" parent="Desafio" unique_id=1861439723]
+position = Vector2(411, 220)
+texture = SubResource("AtlasTexture_w3yf8")
+
+[node name="Machado5" type="Sprite2D" parent="Desafio" unique_id=368319201]
+position = Vector2(466, 220)
+texture = SubResource("AtlasTexture_w3yf8")
+
+[node name="Machado6" type="Sprite2D" parent="Desafio" unique_id=1214456162]
+position = Vector2(522, 220)
+texture = SubResource("AtlasTexture_w3yf8")
+
+[node name="Machado7" type="Sprite2D" parent="Desafio" unique_id=28011349]
+position = Vector2(244, 149.5)
+texture = SubResource("AtlasTexture_w3yf8")
+flip_v = true
+
+[node name="Machado8" type="Sprite2D" parent="Desafio" unique_id=2127367031]
+position = Vector2(300, 149.5)
+texture = SubResource("AtlasTexture_w3yf8")
+flip_v = true
+
+[node name="Machado9" type="Sprite2D" parent="Desafio" unique_id=2045922143]
+position = Vector2(355, 149.5)
+texture = SubResource("AtlasTexture_w3yf8")
+flip_v = true
+
+[node name="Machado10" type="Sprite2D" parent="Desafio" unique_id=1604003598]
+position = Vector2(411, 149.5)
+texture = SubResource("AtlasTexture_w3yf8")
+flip_v = true
+
+[node name="Machado11" type="Sprite2D" parent="Desafio" unique_id=1549849537]
+position = Vector2(466, 149.5)
+texture = SubResource("AtlasTexture_w3yf8")
+flip_v = true
+
+[node name="Machado12" type="Sprite2D" parent="Desafio" unique_id=1007813639]
+position = Vector2(522, 149.5)
+texture = SubResource("AtlasTexture_w3yf8")
+flip_v = true
+
+[node name="Alvo" type="Sprite2D" parent="Desafio" unique_id=324668706]
+position = Vector2(603, 189)
+scale = Vector2(2, 5)
+texture = SubResource("AtlasTexture_4mnnu")
 
 [node name="ColisorAlvo" type="Area2D" parent="Desafio/Alvo" unique_id=83316192 groups=["alvo"]]
+position = Vector2(-301.5, -37.8)
+scale = Vector2(0.5, 0.2)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Desafio/Alvo/ColisorAlvo" unique_id=1035562061]
 shape = SubResource("SegmentShape2D_otrat")
 
-[node name="Parede" type="Line2D" parent="Desafio" unique_id=451402294]
-points = PackedVector2Array(216, 160, 552, 160)
-default_color = Color(0, 0, 0, 1)
-
-[node name="ColisorParede" type="Area2D" parent="Desafio/Parede" unique_id=967631577]
+[node name="ColisorParede" type="Area2D" parent="Desafio" unique_id=967631577]
 collision_layer = 2
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Desafio/Parede/ColisorParede" unique_id=259400602]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Desafio/ColisorParede" unique_id=259400602]
 shape = SubResource("SegmentShape2D_42602")
 
-[node name="Parede2" type="Line2D" parent="Desafio" unique_id=1597012251]
-points = PackedVector2Array(216, 208, 552, 208)
-default_color = Color(0, 0, 0, 1)
-
-[node name="ColisorParede" type="Area2D" parent="Desafio/Parede2" unique_id=718740446]
+[node name="ColisorParede2" type="Area2D" parent="Desafio" unique_id=718740446]
 collision_layer = 2
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Desafio/Parede2/ColisorParede" unique_id=802611415]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Desafio/ColisorParede2" unique_id=802611415]
 shape = SubResource("SegmentShape2D_4mnnu")
 
 [node name="Titulo" type="Label" parent="." unique_id=447816567]

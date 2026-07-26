@@ -1,16 +1,45 @@
 [gd_scene format=3 uid="uid://5hx0nq0gfwen"]
 
 [ext_resource type="Script" uid="uid://dy43hx1no3yke" path="res://Cenas/Minijogos/Ciclope/ciclope.gd" id="1_mmlj4"]
-[ext_resource type="Texture2D" uid="uid://bc1ayuixxupfe" path="res://icon.svg" id="2_2ikrp"]
+[ext_resource type="Texture2D" uid="uid://cqxyf375cu7md" path="res://Sprites/Fundo tela de inicio.png" id="2_kbalv"]
+[ext_resource type="Texture2D" uid="uid://ckb728slm6yet" path="res://Sprites/Ciclope.png" id="3_ahksd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mnnu"]
+atlas = ExtResource("3_ahksd")
+region = Rect2(81, 2, 79, 93)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbalv"]
+atlas = ExtResource("3_ahksd")
+region = Rect2(5, 6, 54, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1i4hq"]
+atlas = ExtResource("3_ahksd")
+region = Rect2(4, 39, 11, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahksd"]
+atlas = ExtResource("3_ahksd")
+region = Rect2(23, 43, 46, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_584db"]
+atlas = ExtResource("3_ahksd")
+region = Rect2(2, 70, 60, 20)
 
 [sub_resource type="Curve2D" id="Curve2D_kbalv"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 64, 280, 0, 0, 0, 0, 576, 280)
+"points": PackedVector2Array(0, 0, 0, 0, 64, 312, 0, 0, 0, 0, 576, 312)
 }
 point_count = 2
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_otrat"]
+atlas = ExtResource("3_ahksd")
+region = Rect2(145, 98, 15, 60)
+
 [sub_resource type="LabelSettings" id="LabelSettings_2ikrp"]
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3yf8"]
+atlas = ExtResource("3_ahksd")
+region = Rect2(5, 104, 131, 24)
 
 [node name="Ciclope" type="Control" unique_id=1125950825 node_paths=PackedStringArray("caminho_lanca", "lanca", "area_clique")]
 layout_mode = 3
@@ -25,41 +54,54 @@ lanca = NodePath("Path2D/PathFollow2D/Lanca")
 area_clique = NodePath("Button")
 metadata/_custom_type_script = "uid://brfp8a3wxvhfk"
 
-[node name="Fundo" type="ColorRect" parent="." unique_id=1059947952]
+[node name="Fundo" type="TextureRect" parent="." unique_id=383321072]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_kbalv")
+
+[node name="Ciclope" type="Sprite2D" parent="." unique_id=399978521]
+position = Vector2(320, 160)
+scale = Vector2(2.5, 2.5)
+texture = SubResource("AtlasTexture_4mnnu")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Ciclope" unique_id=2111123039]
+texture = SubResource("AtlasTexture_kbalv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ciclope" unique_id=1185226787]
+texture = SubResource("AtlasTexture_1i4hq")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Ciclope" unique_id=1544309325]
+position = Vector2(0, -11.44)
+texture = SubResource("AtlasTexture_ahksd")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Ciclope" unique_id=2070694549]
+position = Vector2(0, 24.715)
+texture = SubResource("AtlasTexture_584db")
 
 [node name="Path2D" type="Path2D" parent="." unique_id=1733573923]
 curve = SubResource("Curve2D_kbalv")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1510193648]
-position = Vector2(320, 280)
-progress = 256.0
+position = Vector2(140.8, 312)
+progress = 76.8
 cubic_interp = false
 loop = false
 
 [node name="Lanca" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=604812171]
-scale = Vector2(0.1, 1)
-texture = ExtResource("2_2ikrp")
-
-[node name="Ciclope" type="Sprite2D" parent="." unique_id=399978521]
-position = Vector2(304, 168)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_2ikrp")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_otrat")
 
 [node name="Button" type="Button" parent="." unique_id=1617886658]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -160.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 flat = true
 
 [node name="Titulo" type="Label" parent="." unique_id=60822229]
@@ -74,6 +116,18 @@ offset_bottom = -0.040000916
 text = "Blind the Ciclops"
 label_settings = SubResource("LabelSettings_2ikrp")
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1202766766]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.822
+anchor_right = 0.9995001
+anchor_bottom = 0.99988884
+offset_top = 0.07998657
+offset_right = 0.3199463
+offset_bottom = 0.0399971
+texture = SubResource("AtlasTexture_w3yf8")
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

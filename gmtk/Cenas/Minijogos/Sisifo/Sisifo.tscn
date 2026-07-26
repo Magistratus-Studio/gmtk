@@ -1,63 +1,108 @@
 [gd_scene format=3 uid="uid://d1qeky4720sqw"]
 
 [ext_resource type="Script" uid="uid://c1ddb51hvap8j" path="res://Cenas/Minijogos/Sisifo/sisifo.gd" id="1_w1vjk"]
-[ext_resource type="Texture2D" uid="uid://bc1ayuixxupfe" path="res://icon.svg" id="2_i5430"]
+[ext_resource type="Texture2D" uid="uid://cqxyf375cu7md" path="res://Sprites/Fundo tela de inicio.png" id="2_dvg0a"]
+[ext_resource type="Texture2D" uid="uid://b6pxqctw6li14" path="res://Sprites/Sisfo.png" id="3_7avp5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mnnu"]
+atlas = ExtResource("3_7avp5")
+region = Rect2(32, 0, 64, 48)
 
 [sub_resource type="Curve2D" id="Curve2D_873gn"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 48, 320, 0, 0, 0, 0, 632, 88)
+"points": PackedVector2Array(0, 0, 0, 0, 90, 288, 0, 0, 0, 0, 584, 128)
 }
 point_count = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hajsk"]
+atlas = ExtResource("3_7avp5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_otrat"]
+radius = 16.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvg0a"]
+atlas = ExtResource("3_7avp5")
+region = Rect2(9, 67, 17, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7avp5"]
+atlas = ExtResource("3_7avp5")
+region = Rect2(41, 67, 17, 29)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4mnnu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvg0a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7avp5")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3f0ay"]
 font_color = Color(0, 0, 0, 1)
 
-[node name="Sisifo" type="Control" unique_id=1995805051 node_paths=PackedStringArray("caminho_pedra")]
+[node name="Sisifo" type="Control" unique_id=1995805051 node_paths=PackedStringArray("caminho_pedra", "pedra")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_w1vjk")
 caminho_pedra = NodePath("Path2D/PathFollow2D")
+pedra = NodePath("Path2D/PathFollow2D/Pedra")
 metadata/_custom_type_script = "uid://brfp8a3wxvhfk"
 
-[node name="Fundo" type="ColorRect" parent="." unique_id=1114652887]
+[node name="Fundo" type="TextureRect" parent="." unique_id=724842423]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_dvg0a")
 
-[node name="Line2D" type="Line2D" parent="." unique_id=437271396]
-points = PackedVector2Array(64, 360, 640, 128)
-default_color = Color(0, 0, 0, 1)
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1891445093]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -217.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("AtlasTexture_4mnnu")
 
 [node name="Path2D" type="Path2D" parent="." unique_id=239490144]
 curve = SubResource("Curve2D_873gn")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1185251696]
-position = Vector2(48, 320)
-rotation = -0.3781423
+position = Vector2(90, 288)
+rotates = false
 loop = false
 
-[node name="Pedra" type="TextureButton" parent="Path2D/PathFollow2D" unique_id=576909792]
-custom_maximum_size = Vector2(50, 50)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = -64.0
-offset_right = 64.0
-offset_bottom = 64.0
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("2_i5430")
-stretch_mode = 0
+[node name="Pedra" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=1131963982]
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_hajsk")
+
+[node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D/Pedra" unique_id=451503985]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Pedra/Area2D" unique_id=12426928]
+shape = SubResource("CircleShape2D_otrat")
+
+[node name="Sisifu" type="AnimatedSprite2D" parent="Path2D/PathFollow2D" unique_id=1808796688]
+position = Vector2(-48, 24)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_4mnnu")
+autoplay = "default"
+frame_progress = 0.9864214
 
 [node name="Titulo" type="Label" parent="." unique_id=1219000871]
 layout_mode = 1
@@ -73,4 +118,4 @@ label_settings = SubResource("LabelSettings_3f0ay")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="Path2D/PathFollow2D/Pedra" to="." method="_on_pedra_pressed"]
+[connection signal="input_event" from="Path2D/PathFollow2D/Pedra/Area2D" to="." method="_on_area_2d_input_event"]

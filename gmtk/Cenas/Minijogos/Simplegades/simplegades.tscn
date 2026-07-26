@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cmci35ph4i50f"]
 
 [ext_resource type="Script" uid="uid://cwu7rramflqp7" path="res://Cenas/Minijogos/Simplegades/simplegades.gd" id="1_oevjl"]
+[ext_resource type="Texture2D" uid="uid://cqxyf375cu7md" path="res://Sprites/Fundo tela de inicio.png" id="2_fyjgl"]
 [ext_resource type="Texture2D" uid="uid://bc1ayuixxupfe" path="res://icon.svg" id="2_ytekd"]
 
 [sub_resource type="Gradient" id="Gradient_ytekd"]
@@ -37,14 +38,14 @@ barra_forca = NodePath("BarraForca")
 gradiente_de_cor = SubResource("Gradient_ytekd")
 metadata/_custom_type_script = "uid://brfp8a3wxvhfk"
 
-[node name="Fundo" type="ColorRect" parent="." unique_id=150242788]
+[node name="Fundo" type="TextureRect" parent="." unique_id=1892302129]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
+texture = ExtResource("2_fyjgl")
 
 [node name="Rocha" type="Sprite2D" parent="." unique_id=1033741630]
 position = Vector2(384.00003, 136)

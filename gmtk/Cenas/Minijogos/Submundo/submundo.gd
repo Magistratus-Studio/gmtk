@@ -35,4 +35,4 @@ func _on_botao_pressed(botao: Button) -> void:
 		notas_tocadas.append(NOTAS[botao.name])
 	if notas_tocadas == senha:
 		vitoria = true
-		porta.text = "Aberto"
+		porta.text = "Open"

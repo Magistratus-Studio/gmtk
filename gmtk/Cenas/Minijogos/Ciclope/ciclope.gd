@@ -2,12 +2,12 @@ extends MinigameBase
 
 @export var caminho_lanca: PathFollow2D
 @export var lanca: Sprite2D
-@export var distancia_estocada_certa: float = -50.0
+@export var distancia_estocada_certa: float = -70.0
 @export var distancia_estocada_errada: float = -300
 @export var tempo_ida: float = 0.05
 @export var area_clique: Button
 var vitoria: bool = false
-var velocidade: float = 0.3
+var velocidade: float = 0.7
 var tween: Tween
 
 func iniciar() -> void:
@@ -34,7 +34,7 @@ func _on_button_pressed() -> void:
 		tween.kill()
 	tween = create_tween()
 	
-	if caminho_lanca.progress_ratio > 0.45 and caminho_lanca.progress_ratio < 0.5:
+	if caminho_lanca.progress_ratio >= 0.45 and caminho_lanca.progress_ratio <= 0.55:
 		vitoria = true
 		tween.tween_property(lanca, "position:y", distancia_estocada_certa, tempo_ida)\
 		.as_relative().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)

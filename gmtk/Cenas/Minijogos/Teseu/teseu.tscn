@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://wq113svfs4po"]
 
 [ext_resource type="Script" uid="uid://coyop68501sig" path="res://Cenas/Minijogos/Teseu/teseu.gd" id="1_bpq1e"]
+[ext_resource type="Texture2D" uid="uid://cqxyf375cu7md" path="res://Sprites/Fundo tela de inicio.png" id="2_6hpel"]
 [ext_resource type="PackedScene" uid="uid://cpc6e43rruaga" path="res://Cenas/Minijogos/Teseu/peca.tscn" id="2_7bfs3"]
 [ext_resource type="PackedScene" uid="uid://uv6w05qfvh6s" path="res://Cenas/Minijogos/Teseu/area_arrastavel.tscn" id="3_6hpel"]
 
@@ -18,14 +19,14 @@ mouse_filter = 2
 script = ExtResource("1_bpq1e")
 metadata/_custom_type_script = "uid://brfp8a3wxvhfk"
 
-[node name="Fundo" type="ColorRect" parent="." unique_id=303097296]
+[node name="Fundo" type="TextureRect" parent="." unique_id=963779240]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
+texture = ExtResource("2_6hpel")
 
 [node name="Titulo" type="Label" parent="." unique_id=1787171381]
 layout_mode = 1

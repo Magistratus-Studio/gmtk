@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://b1wqa8wy5xguc"]
 
 [ext_resource type="Script" uid="uid://ov8l3ildxnh0" path="res://Scripts/tela_conclusao.gd" id="1_4u5a8"]
+[ext_resource type="Texture2D" uid="uid://cqxyf375cu7md" path="res://Sprites/Fundo tela de inicio.png" id="2_maa8k"]
+[ext_resource type="Theme" uid="uid://b5q3uqdve1ja6" path="res://Sprites/tema_botoes.tres" id="3_3ip3n"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_otrat"]
+[sub_resource type="LabelSettings" id="LabelSettings_maa8k"]
 font_color = Color(0, 0, 0, 1)
 
 [node name="TelaConclusao" type="Control" unique_id=1906703916]
@@ -14,40 +16,43 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4u5a8")
 
-[node name="Fundo" type="ColorRect" parent="." unique_id=403322889]
+[node name="Fundo" type="TextureRect" parent="." unique_id=1068757894]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_maa8k")
 
-[node name="Label" type="Label" parent="." unique_id=399865288]
+[node name="Button" type="Button" parent="." unique_id=491086708]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -66.0
+offset_top = -33.5
+offset_right = 66.0
+offset_bottom = 33.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "EBAAAA"
-label_settings = SubResource("LabelSettings_otrat")
+theme = ExtResource("3_3ip3n")
+text = "Main Menu"
+metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="." unique_id=491086708]
+[node name="Titulo" type="Label" parent="." unique_id=2086267730]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.421875
-anchor_top = 0.59166664
-anchor_right = 0.559375
-anchor_bottom = 0.65555555
-offset_right = 8.0
-offset_bottom = 8.0
-text = "Main Menu"
+anchor_left = -0.0004999995
+anchor_top = 0.2
+anchor_right = 1.0
+anchor_bottom = 0.264
+offset_left = 0.3199997
+offset_bottom = -0.040000916
+label_settings = SubResource("LabelSettings_maa8k")
+horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

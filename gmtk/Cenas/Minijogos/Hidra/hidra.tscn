@@ -1,7 +1,16 @@
 [gd_scene format=3 uid="uid://bjculms3pwg2t"]
 
 [ext_resource type="Script" uid="uid://1mg1wahe1bbf" path="res://Cenas/Minijogos/Hidra/hidra.gd" id="1_kbmje"]
-[ext_resource type="Texture2D" uid="uid://bc1ayuixxupfe" path="res://icon.svg" id="2_ewagc"]
+[ext_resource type="Texture2D" uid="uid://cqxyf375cu7md" path="res://Sprites/Fundo tela de inicio.png" id="2_qf2fo"]
+[ext_resource type="Texture2D" uid="uid://deghiqlyyvrqu" path="res://Sprites/Hidra.png" id="3_o0lje"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otrat"]
+atlas = ExtResource("3_o0lje")
+region = Rect2(33, 7, 46, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1i4hq"]
+atlas = ExtResource("3_o0lje")
+region = Rect2(81, 3, 14, 26)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ewagc"]
 font_color = Color(0, 0, 0, 1)
@@ -17,28 +26,29 @@ script = ExtResource("1_kbmje")
 cabeca_container = NodePath("Corpo/CabecaContainer")
 metadata/_custom_type_script = "uid://brfp8a3wxvhfk"
 
-[node name="Fundo" type="ColorRect" parent="." unique_id=1440073605]
+[node name="Fundo" type="TextureRect" parent="." unique_id=1838204059]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_qf2fo")
 
 [node name="Corpo" type="TextureRect" parent="." unique_id=770278632]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.79444444
+anchor_top = 0.7277778
 anchor_right = 0.5
-anchor_bottom = 0.79444444
+anchor_bottom = 0.7277778
 offset_left = -96.0
 offset_top = -46.0
 offset_right = 96.0
 offset_bottom = 46.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_ewagc")
+texture = SubResource("AtlasTexture_otrat")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
@@ -51,30 +61,33 @@ theme_override_constants/separation = 8
 alignment = 1
 
 [node name="CabecaButton" type="TextureButton" parent="Corpo/CabecaContainer" unique_id=770054635]
-custom_maximum_size = Vector2(50, 200)
+custom_minimum_size = Vector2(64, 130)
+custom_maximum_size = Vector2(64, 200)
 layout_mode = 2
 offset_transform_enabled = true
-offset_transform_position = Vector2(0, -120)
+offset_transform_position = Vector2(0, -100)
 offset_transform_visual_only = false
-texture_normal = ExtResource("2_ewagc")
+texture_normal = SubResource("AtlasTexture_1i4hq")
 stretch_mode = 0
 
-[node name="CabecaButton2" type="TextureButton" parent="Corpo/CabecaContainer" unique_id=857762777]
-custom_maximum_size = Vector2(50, 200)
+[node name="CabecaButton2" type="TextureButton" parent="Corpo/CabecaContainer" unique_id=1447546147]
+custom_minimum_size = Vector2(64, 130)
+custom_maximum_size = Vector2(64, 200)
 layout_mode = 2
 offset_transform_enabled = true
-offset_transform_position = Vector2(0, -120)
+offset_transform_position = Vector2(0, -100)
 offset_transform_visual_only = false
-texture_normal = ExtResource("2_ewagc")
+texture_normal = SubResource("AtlasTexture_1i4hq")
 stretch_mode = 0
 
-[node name="CabecaButton3" type="TextureButton" parent="Corpo/CabecaContainer" unique_id=414273946]
-custom_maximum_size = Vector2(50, 200)
+[node name="CabecaButton3" type="TextureButton" parent="Corpo/CabecaContainer" unique_id=792695020]
+custom_minimum_size = Vector2(64, 130)
+custom_maximum_size = Vector2(64, 200)
 layout_mode = 2
 offset_transform_enabled = true
-offset_transform_position = Vector2(0, -120)
+offset_transform_position = Vector2(0, -100)
 offset_transform_visual_only = false
-texture_normal = ExtResource("2_ewagc")
+texture_normal = SubResource("AtlasTexture_1i4hq")
 stretch_mode = 0
 
 [node name="Titulo" type="Label" parent="." unique_id=90041217]

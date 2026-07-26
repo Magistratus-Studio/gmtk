@@ -37,6 +37,7 @@ func _iniciar_jogo() -> void:
 	hud.show()
 	minigames_disponiveis = pool_minigames.duplicate(true)
 	vidas = 3
+	Globais.vitoria = false
 	for vida: TextureRect in vidas_container.get_children():
 		vida.modulate = Color.WHITE
 	carregar_cena(tela_seletor)
@@ -73,6 +74,7 @@ func _on_minigame_concluido(sucesso: bool) -> void:
 	parar_timer_minigame()
 	if sucesso:
 		if minigames_disponiveis.size() == 0:
+			Globais.vitoria = true
 			carregar_cena(tela_conclusao) # com vitória
 		else:
 			carregar_cena(tela_seletor)
@@ -82,6 +84,7 @@ func _on_minigame_concluido(sucesso: bool) -> void:
 		var vida: TextureRect = vidas_container.get_child(vidas)
 		vida.modulate = Color.DIM_GRAY
 		if vidas == 0:
+			Globais.vitoria = false
 			carregar_cena(tela_conclusao) # com derrota
 		else:
 			carregar_cena(tela_seletor)
