@@ -4,10 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://b1wqa8wy5xguc" path="res://Cenas/tela_conclusao.tscn" id="2_26w0q"]
 [ext_resource type="PackedScene" uid="uid://dcrl7ywx8jwtf" path="res://Cenas/menu_inicial.tscn" id="3_sr11h"]
 [ext_resource type="PackedScene" uid="uid://b1a13bxuslybc" path="res://Cenas/seletor_caminho.tscn" id="4_f5rh3"]
-[ext_resource type="PackedScene" uid="uid://wq113svfs4po" path="res://Cenas/Minijogos/Teseu/teseu.tscn" id="5_vl8rj"]
-[ext_resource type="PackedScene" uid="uid://bd00gh7xx8fsd" path="res://Cenas/Minijogos/Submundo/submundo.tscn" id="6_g8ekr"]
-[ext_resource type="PackedScene" uid="uid://cmci35ph4i50f" path="res://Cenas/Minijogos/Simplegades/simplegades.tscn" id="7_bdi2s"]
-[ext_resource type="PackedScene" uid="uid://bgwj7u2ooc3w3" path="res://Cenas/Minijogos/Aves/aves_estifalo.tscn" id="8_rvrk6"]
 [ext_resource type="PackedScene" uid="uid://d3sot5xgqkdv8" path="res://Cenas/Minijogos/Arco/arco_odisseu.tscn" id="9_27606"]
 [ext_resource type="PackedScene" uid="uid://bjculms3pwg2t" path="res://Cenas/Minijogos/Hidra/hidra.tscn" id="10_5u8lg"]
 [ext_resource type="PackedScene" uid="uid://d2yt5lwvfw3uh" path="res://Cenas/Minijogos/Medusa/Medusa.tscn" id="11_eq1h1"]
@@ -34,7 +30,7 @@ scene_controller = NodePath("SceneController")
 tela_conclusao = ExtResource("2_26w0q")
 tela_inicial = ExtResource("3_sr11h")
 tela_seletor = ExtResource("4_f5rh3")
-minigames_disponiveis = Array[PackedScene]([ExtResource("5_vl8rj"), ExtResource("6_g8ekr"), ExtResource("7_bdi2s"), ExtResource("8_rvrk6"), ExtResource("9_27606"), ExtResource("10_5u8lg"), ExtResource("11_eq1h1"), ExtResource("12_arl2q"), ExtResource("13_uud8v")])
+minigames_disponiveis = Array[PackedScene]([ExtResource("9_27606"), ExtResource("10_5u8lg"), ExtResource("11_eq1h1"), ExtResource("12_arl2q"), ExtResource("13_uud8v")])
 
 [node name="TimerMinigame" type="Timer" parent="." unique_id=362766242]
 one_shot = true

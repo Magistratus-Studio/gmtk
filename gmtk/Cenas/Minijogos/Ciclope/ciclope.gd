@@ -2,8 +2,8 @@ extends MinigameBase
 
 @export var caminho_lanca: PathFollow2D
 @export var lanca: Sprite2D
-@export var distancia_estocada_certa: float = -70.0
-@export var distancia_estocada_errada: float = -300
+@export var distancia_estocada_certa: float = -110.0
+@export var distancia_estocada_errada: float = -500
 @export var tempo_ida: float = 0.05
 @export var area_clique: Button
 var vitoria: bool = false
@@ -41,11 +41,16 @@ func _on_button_pressed() -> void:
 		vitoria = true
 		tween.tween_property(lanca, "position:y", distancia_estocada_certa, tempo_ida)\
 		.as_relative().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+		tween.parallel().tween_property(lanca, "scale", Vector2(1.5,1.5), tempo_ida)\
+		.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 		$Ciclope/Olho.texture = olho_acertado
-		$Ciclope/Olho.scale = Vector2(0.5,0.5)
+		$Ciclope/Olho.scale = Vector2(0.7,0.7)
 		$Ciclope/Boca.texture = boca_acertado
 		$Ciclope/Boca.global_position.y += 10
 		$Ciclope.texture = rosto_acertado
+		$Ciclope/Sprite2D2.hide()
 	else:
 		tween.tween_property(lanca, "position:y", distancia_estocada_errada, tempo_ida)\
 			.as_relative().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+		tween.parallel().tween_property(lanca, "scale", Vector2(1,1), tempo_ida)\
+		.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)

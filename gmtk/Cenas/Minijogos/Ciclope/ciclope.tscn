@@ -38,6 +38,10 @@ region = Rect2(23, 43, 46, 13)
 atlas = ExtResource("3_ahksd")
 region = Rect2(2, 70, 60, 20)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3yf8"]
+atlas = ExtResource("3_ahksd")
+region = Rect2(5, 104, 131, 24)
+
 [sub_resource type="Curve2D" id="Curve2D_kbalv"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 64, 312, 0, 0, 0, 0, 576, 312)
@@ -47,10 +51,6 @@ point_count = 2
 [sub_resource type="AtlasTexture" id="AtlasTexture_otrat"]
 atlas = ExtResource("3_ahksd")
 region = Rect2(145, 98, 15, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w3yf8"]
-atlas = ExtResource("3_ahksd")
-region = Rect2(5, 104, 131, 24)
 
 [node name="Ciclope" type="Control" unique_id=1125950825 node_paths=PackedStringArray("caminho_lanca", "lanca", "area_clique")]
 layout_mode = 3
@@ -96,19 +96,6 @@ texture = SubResource("AtlasTexture_ahksd")
 position = Vector2(0, 24.715)
 texture = SubResource("AtlasTexture_584db")
 
-[node name="Path2D" type="Path2D" parent="." unique_id=1733573923]
-curve = SubResource("Curve2D_kbalv")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1510193648]
-position = Vector2(140.8, 312)
-progress = 76.8
-cubic_interp = false
-loop = false
-
-[node name="Lanca" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=604812171]
-scale = Vector2(3, 3)
-texture = SubResource("AtlasTexture_otrat")
-
 [node name="Button" type="Button" parent="." unique_id=1617886658]
 layout_mode = 1
 anchors_preset = 15
@@ -139,9 +126,22 @@ anchor_top = 0.822
 anchor_right = 0.9995001
 anchor_bottom = 0.99988884
 offset_top = 0.07998657
-offset_right = 0.3199463
-offset_bottom = 0.0399971
+offset_right = 52.03955
+offset_bottom = 7.536316
 texture = SubResource("AtlasTexture_w3yf8")
 metadata/_edit_use_anchors_ = true
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1733573923]
+curve = SubResource("Curve2D_kbalv")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1510193648]
+position = Vector2(140.8, 312)
+progress = 76.8
+cubic_interp = false
+loop = false
+
+[node name="Lanca" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=604812171]
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_otrat")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
